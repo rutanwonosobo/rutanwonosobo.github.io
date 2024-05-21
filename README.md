@@ -48,7 +48,7 @@
 
 **Cara Mengakses Sistem Layanan Terpadu Rutan Wonosobo:**
 
-* **Masyarakat dapat mengakses Sistem Layanan Terpadu Rutan Wonosobo melalui website:** [https://rutanwonosobo.github.io/](https://rutanwonosobo.github.io/)
+* **Masyarakat dapat mengakses Sistem Layanan Terpadu Rutan Wonosobo melalui website:** [https://rutanwonosobo.vercel.app/](https://rutanwonosobo.vercel.app/)
 
 * **Masyarakat juga dapat mengakses Sistem Layanan Terpadu Rutan Wonosobo melalui aplikasi mobile yang tersedia di Google Play Store dan App Store.**
 
