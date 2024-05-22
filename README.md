@@ -1,5 +1,8 @@
 # SAYAP TAWON
 
+![Sayap Tawon Logo](https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/sayap-tawon-with-icon.webp)
+
+
 **Sistem Layanan Terpadu Rutan Wonosobo** adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.
 
 **Manfaat Sistem Layanan Terpadu Rutan Wonosobo:**
