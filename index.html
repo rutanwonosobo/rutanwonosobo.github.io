@@ -6,254 +6,313 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SAYAP TAWON - RUTAN WONOSOBO</title>
     <meta name="description"
-        content="SAYAP TAWON: Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
+        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
     <meta name="keywords"
         content="SAYAP TAWON, Sistem Layanan Terpadu, Rutan Wonosobo, layanan publik, transparansi, akuntabilitas">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.example.com/sayap-tawon">
-    <meta property="og:title" content="SAYAP TAWON: Sistem Layanan Terpadu Rutan Wonosobo">
+    <link rel="canonical" href="https://rutanwonosobo.vercel.app/">
+    <meta property="og:title" content="SAYAP TAWON - RUTAN WONOSOBO">
     <meta property="og:description"
-        content="SAYAP TAWON: Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
-    <meta property="og:image" content="https://www.example.com/images/sayap-tawon.jpg">
-    <meta property="og:url" content="https://www.example.com/sayap-tawon">
-    <link rel="icon" href="./assets/img/logorutanwonosobo.png" type="image/png" sizes="any">
+        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
+    <meta property="og:image"
+        content="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/repo-rutanwonosobo.png">
+    <meta property="og:url" content="https://rutanwonosobo.vercel.app/">
+    <link rel="icon"
+        href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png"
+        type="image/png" sizes="any">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/eliyantosarage-dev/Font-Awesome-Pro@main/web/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .hero-section {
-            position: relative;
-            background-image: url('./assets/img/hero-background.png');
-            background-size: cover;
-            background-position: center;
-            height: 30vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
-
-        .profile {
-            position: absolute;
-            cursor: pointer;
-            bottom: -50px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            z-index: 1;
-        }
-
-        .brand {
-            letter-spacing: 0.2rem;
-        }
-
-        .modal-dialog {
-            display: flex;
-            align-items: center;
-            min-height: calc(100vh - 1rem);
-        }
-
-        .accordion-item {
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .map-responsive {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-        }
-
-        .map-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .btn-map {
-            background-color: #031633;
-            color: #ffffff;
-            border-radius: 30px;
-        }
-
-        .btn-map:hover {
-            background-color: #032830;
-            color: #ffffff;
-        }
-
-        .social-btn {
-            font-size: 24px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-btn:hover {
-            opacity: 0.8;
-        }
-
-        .disabled {
-            pointer-events: none;
-        }
-    </style>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
 </head>
 
 <body>
-
-    <div class="container-fluid m-0 p-0">
-        <div class="hero-section shadow">
-            <img src="./assets/img/logorutanwonosobo.png"
-                class="profile img-fluid rounded-circle border border-4 border-white p-1 shadow"
-                alt="Logo Rutan Wonosobo" data-bs-toggle="modal" data-bs-target="#AboutModal">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+            <div class="hero-section shadow">
+                <img src="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png"
+                    class="profile img-fluid rounded-circle border border-4 border-white shadow"
+                    alt="Logo Rutan Wonosobo">
+            </div>
         </div>
     </div>
 
-    <div class="container mt-4">
+    <div class="container-fluid mt-4">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-12">
+            <div class="col-lg-6 col-md-8 col-12">
                 <div class="card shadow mt-0 mb-4">
+                    <div class="sejarah-rutan position-absolute top-0 start-0 m-3" data-bs-toggle="modal"
+                        data-bs-target="#SejarahRutanModal">
+                        <i class="fa-solid fa-circle-info rounded-circle"></i>
+                    </div>
+                    <div class="verified-badges position-absolute top-0 end-0 m-3" data-bs-toggle="modal"
+                        data-bs-target="#AboutModal">
+                        <i class="fa-solid fa-badge-check rounded-circle"></i>
+                    </div>
                     <div class="card-header text-center">
                         <h1 class="brand fw-bold text-uppercase mt-5">Sayap Tawon</h1>
-                        <h2 class="fs-6 fw-bold text-uppercase">Sistem Layanan Terpadu Rutan Wonosobo</h2>
+                        <h2 class="fs-6 fw-bold text-uppercase mb-4">Sistem Layanan Terpadu Rutan Wonosobo</h2>
                     </div>
                     <div class="card-body">
+                        <div id="clock" class="text-center fw-bold shadow-sm p-3 mb-4 bg-body-emphasis rounded">
+                            <div class="time" id="waktu"></div>
+                            <div class="date" id="tanggal"></div>
+                        </div>
+                        <div class="info-wbp mt-4 mb-4">
+                            <marquee behavior="scroll" direction="left" scrollamount="5"
+                                class="text-bg-primary p-2 shadow-sm bg-body-emphasis rounded-pill shadow"
+                                id="marqueeData">Loading data...</marquee>
+                        </div>
                         <p class="text-center fw-bold text-uppercase mt-2 mb-4">Layanan yang tersedia</p>
                         <div class="accordion accordion-flush" id="accordionExample">
                             <div class="accordion-item">
-                                <div class="accordion-header" id="headingOne">
-                                    <h2 class="accordion-button collapsed fw-bold rounded text-bg-warning" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="true"
-                                        aria-controls="flush-collapse1">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed fw-bold rounded text-bg-warning shadow"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="true" aria-controls="flush-collapseOne">
                                         <small>Layanan Kunjungan dan Penitipan Barang</small>
-                                    </h2>
-                                </div>
-                                <div id="flush-collapse1" class="accordion-collapse collapse"
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-center">
-                                        <blockquote class="instagram-media mx-auto" data-instgrm-captioned
+                                        <blockquote class="instagram-media mx-auto"
                                             data-instgrm-permalink="https://www.instagram.com/p/CvWl3USrWpk/?utm_source=ig_embed&amp;utm_campaign=loading"
                                             data-instgrm-version="14"
-                                            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                                            style="background:#ffffff;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px)">
                                         </blockquote>
                                         <script async src="//www.instagram.com/embed.js"></script>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="accordion-item">
-                                <div class="accordion-header" id="headingTwo">
-                                    <h2 class="accordion-button collapsed fw-bold rounded text-bg-warning" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="true"
-                                        aria-controls="flush-collapse2">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed fw-bold rounded text-bg-warning shadow"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="false" aria-controls="flush-collapseTwo">
                                         <small>Accordion Item #2</small>
-                                    </h2>
-                                </div>
-                                <div id="flush-collapse2" class="accordion-collapse collapse"
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Description Accordion Item #2.
-                                    </div>
+                                    <div class="accordion-body">Description Accordion Item #2.</div>
                                 </div>
                             </div>
+
                             <div class="accordion-item">
-                                <div class="accordion-header" id="headingTwo">
-                                    <h2 class="accordion-button collapsed fw-bold rounded text-bg-warning" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="true"
-                                        aria-controls="flush-collapse3">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed fw-bold rounded text-bg-warning shadow"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
                                         <small>Accordion Item #3</small>
-                                    </h2>
-                                </div>
-                                <div id="flush-collapse3" class="accordion-collapse collapse"
-                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Description Accordion Item #3.
-                                    </div>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">Description Accordion Item #3.</div>
                                 </div>
                             </div>
                         </div>
+
                         <hr>
+
                         <div class="d-grid gap-2 mt-4 mb-4">
-                            <a href="https://www.instagram.com/narya_thea/" class="btn btn-primary" role="button"
-                                aria-disabled="true" target="_blank"><i
-                                    class="fa-solid fa-cloud-arrow-down me-2"></i>Click Me (active)</a>
-                            <a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true"
-                                target="_blank"><i class="fa-regular fa-file-arrow-down me-2"></i>Don't Click Me
-                                (disabled)</a>
+                            <a href="#" class="btn btn-primary shadow" role="button" target="_blank">
+                                <i class="fa-solid fa-cloud-arrow-down me-2"></i>Click Me (active)
+                            </a>
+                            <a href="#" class="btn btn-secondary shadow disabled" role="button" aria-disabled="true"
+                                target="_blank">
+                                <i class="fa-regular fa-file-arrow-down me-2"></i>Don't Click Me (disabled)
+                            </a>
                         </div>
+
                         <hr>
+
                         <div class="d-grid gap-2 mt-4 mb-4">
-                            <button type="button" class="btn btn-map" data-bs-toggle="modal" data-bs-target="#mapModal">
+                            <button type="button" class="btn btn-map shadow" data-bs-toggle="modal"
+                                data-bs-target="#mapModal">
                                 <i class="fa-regular fa-location-dot me-2"></i>Buka Peta
                             </button>
                         </div>
 
+                        <hr>
+
+                        <div class="d-flex gap-2 mx-auto justify-content-center mt-4 mb-4">
+                            <button class="btn btn-danger btn-sm shadow w-100" type="button" data-bs-toggle="modal"
+                                data-bs-target="#TelephoneModal">
+                                <i class="fa-regular fa-phone-office shadow contact-icon"></i>
+                                <span>Telephone</span>
+                            </button>
+                            <button class="btn btn-primary btn-sm shadow w-100" type="button" data-bs-toggle="modal"
+                                data-bs-target="#FaximileModal">
+                                <i class="fa-regular fa-fax shadow contact-icon"></i>
+                                <span>Faxsimile</span>
+                            </button>
+                            <button class="btn btn-success btn-sm shadow w-100" type="button" data-bs-toggle="modal"
+                                data-bs-target="#WhatsAppModal">
+                                <i class="fa-brands fa-whatsapp shadow contact-icon"></i>
+                                <span>WhatsApp</span>
+                            </button>
+                        </div>
+
+                        <hr>
+
                         <div class="d-flex justify-content-center mt-4 mb-2">
                             <a href="https://www.facebook.com/rutanwonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle me-2"><i
-                                    class="fa-brands fa-facebook-f"></i></a>
+                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
                             <a href="https://x.com/RutanWonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle me-2"><i
-                                    class="fa-brands fa-x-twitter"></i></a>
+                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
                             <a href="https://www.instagram.com/rutanwonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle me-2"><i
-                                    class="fa-brands fa-instagram"></i></a>
+                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
                             <a href="https://rutanwonosobo.kemenkumham.go.id/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle"><i
-                                    class="fa-regular fa-earth-asia"></i></a>
+                                class="btn text-bg-dark social-btn rounded-circle shadow">
+                                <i class="fa-regular fa-earth-asia"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="card-footer text-muted text-center">
-                        <small>Powered by <a href="https://www.instagram.com/eliyantosarage_/" target="_blank"
-                                class="text-muted">@eliyantosarage</a></small>
+                        <p class="m-0 p-0"><small>Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.</small></p>
+                        <p class="m-0 p-0"><small>All Rights Reserved.</small></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="AboutModal" tabindex="-1" aria-labelledby="AboutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Modal Sejarah Rutan -->
+    <div class="modal fade" id="SejarahRutanModal" tabindex="-1" aria-labelledby="SejarahRutanModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-uppercase" id="AboutModalLabel">Tentang Sayap Tawon</h5>
+                    <h5 class="modal-title text-uppercase" id="SejarahRutanModalLabel"><i
+                            class="fa-regular fa-building-shield me-2"></i>Sejarah Rutan Wonosobo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <p class="font-monospace text-center"><strong>Sistem Layanan Terpadu Rutan Wonosobo</strong> adalah
-                        sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam
-                        satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik
-                        di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan
-                        akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.</p>
+                <div class="modal-body text-center">
+                    <p><strong>Unit Pelaksana Teknis (UPT) Pemasyarakatan</strong> di daerah yang bertanggung jawab
+                        langsung kepada <strong>Kepala Kantor Wilayah Kementerian Hukum dan HAM Jawa Tengah</strong>.
+                        Rutan Wonosobo berdomisili di <strong>Jalan Pramuka Nomor 1 Wonosobo</strong>, dengan luas tanah
+                        4.680 m² dan luas bangunan 1.268 m², memiliki kapasitas 150 orang, dan merupakan bangunan yang
+                        dibangun sejak tahun 1860 yang usianya sudah sangat tua dan terakhir dilakukan rehabilitasi pada
+                        tahun 1998.</p>
+                    <hr>
+                    <p>Secara geografis, <strong>Kabupaten Wonosobo</strong> berjarak sekitar 130 km dari <strong>ibu
+                            kota provinsi (Semarang)</strong> dan berjarak sekitar 520 km dari <strong>ibu kota
+                            Jakarta</strong>, dengan ketinggian berkisar antara 270 m hingga 2.250 m di atas permukaan
+                        laut, dan tergolong sebagai daerah yang memiliki kelembaban udara sangat tinggi.</p>
+                    <hr>
+                    <p><strong>Rutan Wonosobo</strong> terletak tidak jauh dari <strong>pusat kota Wonosobo (Alun-alun
+                            Wonosobo)</strong> yang berjarak sekitar 50 m, lokasinya sangat strategis dan mudah
+                        dijangkau karena terletak di lingkungan pusat kota dan dekat dengan jalur angkutan umum.</p>
+                    <hr>
+                    <p>Dalam kerangka sistem peradilan pidana, <strong>Rutan Wonosobo</strong> letaknya sangat dekat
+                        dengan <strong>Kejaksaan Negeri Wonosobo</strong>, kurang lebih 20 m, sedangkan jaraknya dengan
+                        <strong>Polres Wonosobo</strong> kurang lebih 1 km, dan jaraknya dengan <strong>Pengadilan
+                            Negeri Wonosobo</strong> kurang lebih 2 km.
+                    </p>
+                    <hr>
+                    <p>Komponen bangunan <strong>Rutan Wonosobo</strong> yang merupakan bangunan zaman Belanda belum
+                        memenuhi standar yang ditentukan sebagai bangunan <strong>Unit Pelaksana Teknis (UPT)</strong>
+                        yang berpedoman pada sistem pemasyarakatan. Di antaranya, blok hunian yang ada terdiri dari 1
+                        blok pria dengan 14 kamar yang dipergunakan untuk blok tahanan sebanyak 7 kamar dan blok
+                        narapidana sebanyak 7 kamar, sedangkan 1 blok dipergunakan untuk hunian tahanan dan narapidana
+                        wanita yang terdiri dari 1 kamar.</p>
+                    <hr>
+                    <p>Letak <strong>Rumah Dinas Kepala Rutan</strong> cukup jauh dari lokasi Rutan, yakni berada di
+                        <strong>Jalan Kyai Sabuk Alu Wonosobo</strong> yang berjarak sekitar 1 km dari Rutan Wonosobo.
+                    </p>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <span><small>Powered by <a href="https://www.instagram.com/eliyantosarage_/" target="_blank"
-                                class="text-muted">@eliyantosarage</a></small></span>
+                    <a href="https://rutanwonosobo.kemenkumham.go.id/profil/tentang-satuan-kerja/selayang-pandang-satuan-kerja"
+                        class="btn btn-primary btn-sm w-100" role="button" target="_blank">SELAYANG PANDANG SATUAN
+                        KERJA</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Tentang Aplikasi -->
+    <div class="modal fade" id="AboutModal" tabindex="-1" aria-labelledby="AboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center align-items-center">
+                    <h5 class="modal-title text-uppercase" id="AboutModalLabel"><i
+                            class="fa-regular fa-bee me-2"></i>Tentang Sayap Tawon <h6><span
+                                class="badge rounded-pill text-bg-secondary ms-2">pre-release</span></h6>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="row">
+                        <h3 class="fw-bold text-uppercase mt-4 mb-4">development team</h3>
+                        <div
+                            class="col-md-6 ms-auto d-flex flex-column justify-content-center align-items-center author">
+                            <h5 class="text-uppercase fw-bold">Karutan Wonosobo</h5>
+                            <img src="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/narya.webp"
+                                alt="Narya, Amd. IP., S.H." class="img-fluid rounded shadow">
+                            <p class="fw-bold mt-4 mb-2">Narya, Amd. IP., S.H.</p>
+                            <p class="fst-italic">(App Initiator)</p>
+                        </div>
+                        <div
+                            class="col-md-6 ms-auto d-flex flex-column justify-content-center align-items-center author">
+                            <h5 class="text-uppercase fw-bold">Anggota Regu Pengamanan</h5>
+                            <img src="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/eliyantosarage.webp"
+                                alt="Eliyanto Sarage" class="img-fluid rounded shadow">
+                            <p class="fw-bold mt-4 mb-2">Eliyanto Sarage</p>
+                            <p class="fst-italic">(App Developer)</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <p><strong>Sistem Layanan Terpadu Rutan Wonosobo</strong> adalah sebuah sistem yang mengintegrasikan
+                        berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan
+                        untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan
+                        kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan
+                        publik di Rutan Wonosobo.</p>
+                    <hr>
+                    <p><strong>Sistem Layanan Terpadu Rutan Wonosobo</strong> dikembangkan menggunakan framework <button
+                            type="button" class="btn btn-sm fw-bold btn-primary rounded-pill px-3"
+                            data-bs-toggle="popover" data-bs-title="Bootstrap"
+                            data-bs-content="Bootstrap adalah framework front-end gratis dan open-source yang digunakan untuk mengembangkan proyek responsif seluler di web. Bootstrap adalah kerangka kerja HTML, CSS, dan JS yang paling populer."><i
+                                class="fa-brands fa-bootstrap me-2"></i>Bootstrap</button> untuk memastikan
+                        responsivitas antarmuka pengguna yang optimal. Kode aplikasi disimpan dan dikelola melalui
+                        platform <button type="button" class="btn btn-sm fw-bold btn-secondary rounded-pill px-3"
+                            data-bs-toggle="popover" data-bs-title="GitHub"
+                            data-bs-content="GitHub adalah sebuah platform online berbasis cloud yang digunakan oleh para developer untuk menyimpan, melacak, dan mengelola kode dan hasil proyek IT. GitHub juga merupakan tempat kolaborasi antar developer dalam suatu proyek perangkat lunak."><i
+                                class="fa-brands fa-github me-2"></i>GitHub</button>, yang memfasilitasi kolaborasi tim
+                        dan pelacakan perubahan dengan efisiensi. Selain itu, proses deployment aplikasi dilakukan
+                        melalui platform <button type="button" class="btn btn-sm fw-bold btn-dark rounded-pill px-3"
+                            data-bs-toggle="popover" data-bs-title="Vercel"
+                            data-bs-content="Vercel adalah platform cloud Amerika yang memungkinkan pengembang untuk membangun, menerapkan, dan menskalakan situs web statis dan aplikasi tanpa server. Vercel sebelumnya dikenal sebagai ZEIT dan fokus utamanya adalah menyediakan hosting untuk aplikasi Node.js."><i
+                                class="fa-solid fa-triangle me-2"></i>Vercel</button>, memanfaatkan integrasi yang ada
+                        untuk memastikan ketersediaan dan kinerja yang optimal. Dengan demikian, pendekatan teknologi
+                        modern yang digunakan dalam pembuatan aplikasi ini memberikan landasan yang kokoh untuk
+                        penyediaan layanan terpadu di Rutan Wonosobo.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <small>Powered by <a href="https://www.instagram.com/eliyantosarage_/" target="_blank"
+                            class="text-muted fst-italic">@eliyantosarage</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Peta -->
     <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="mapModalLabel">Peta Lokasi</h5>
+                    <h5 class="modal-title" id="mapModalLabel"><i class="fa-regular fa-map-location me-2"></i>Peta
+                        Lokasi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -264,16 +323,72 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button class="btn btn-secondary w-100"><a href="https://maps.app.goo.gl/KhnGaMs3pQRqDU336"
-                            style="color: #ffffff;" target="_blank">open in app</a></button>
+                    <a href="https://maps.app.goo.gl/KhnGaMs3pQRqDU336" class="btn btn-primary btn-sm w-100"
+                        role="button" target="_blank">open in app</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Telephone -->
+    <div class="modal fade" id="TelephoneModal" tabindex="-1" aria-labelledby="TelephoneModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="TelephoneModalLabel"><i
+                            class="fa-regular fa-phone-office me-2"></i>Telephone</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center fw-bold">
+                    (0286) 321030
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Faximile -->
+    <div class="modal fade" id="FaximileModal" tabindex="-1" aria-labelledby="FaximileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="FaximileModalLabel"><i
+                            class="fa-regular fa-fax me-2"></i>Faximile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center fw-bold">
+                    (0286) 321384
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal WhatsApp -->
+    <div class="modal fade" id="WhatsAppModal" tabindex="-1" aria-labelledby="WhatsAppModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="WhatsAppModalLabel"><i
+                            class="fa-brands fa-whatsapp me-2"></i>Aduan & Informasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center fw-bold">
+                    (+62) 895-2715-4440
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=6289527154440" class="btn btn-primary btn-sm w-100"
+                        role="button" target="_blank">open in whatsapp</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0-beta/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jumlah-wbp.js"></script>
+    <script src="./assets/js/clock.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+
 </body>
 
 </html>
