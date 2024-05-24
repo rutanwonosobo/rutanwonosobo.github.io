@@ -1,12 +1,27 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    height: 100vh;
-    color: #403b3b;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+	font-family: 'Poppins', Arial, sans-serif;
+	background-color: #f8f9fa;
+	height: 100vh;
+	width: 100%;
+	color: #403b3b;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
 }
 
 h1,
@@ -15,215 +30,252 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
+	text-decoration: none;
+	color: #007bff;
+	transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
+	color: #0056b3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+.container {
+	width: 100%;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    border-radius: 5px;
+	width: 10px;
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 5px;
+	background: #f1f1f1;
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
+	background: #888;
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+	background: #555;
 }
 
 .hero-section {
-    position: relative;
-    background-image: url('https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/sayap-tawon-no-icon.webp');
-    background-size: cover;
-    background-position: center;
-    height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    z-index: 1;
+	position: relative;
+	background-image: url('https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/sayap-tawon-no-icon.webp');
+	background-size: cover;
+	background-position: center;
+	height: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+	z-index: 1;
 }
 
 .profile {
-    position: absolute;
-    cursor: pointer;
-    bottom: -60px;
-    width: 120px;
-    height: 120px;
-    z-index: 1;
+	position: absolute;
+	cursor: pointer;
+	bottom: -60px;
+	width: 120px;
+	height: 120px;
+	z-index: 1;
 }
 
 .author img {
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
+	width: 100%;
+	max-width: 200px;
+	max-height: 250px;
+	object-fit: cover;
 }
 
 .verified-badges,
 .sejarah-rutan {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .verified-badges i,
 .sejarah-rutan i {
-    font-size: 24px;
-    background-color: #ffffff;
-    color: #0d6efd;
+	font-size: 24px;
+	background-color: #ffffff;
+	color: #0d6efd;
 }
 
 .brand {
-    letter-spacing: 0.2rem;
+	letter-spacing: 0.2rem;
 }
 
-.contact-icon {
-    display: d-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    color: #212529;
-    border-radius: 50%;
-    font-size: 1.5em;
-    padding: 15px;
-    margin: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.contact-box {
+	border: 1px solid #ddd;
+	transition: background-color 0.3s, transform 0.3s;
+	cursor: pointer;
 }
 
-.contact-icon:hover {
-    background-color: #212529;
-    color: #ffffff;
+.contact-box:hover {
+	background-color: #f8f9fa;
+	transform: translateY(-5px);
+}
+
+.contact-box i {
+	font-size: 24px;
+}
+
+.contact-box h5 {
+	font-size: 14px;
+	margin: 0;
 }
 
 .modal-dialog {
-    display: flex;
-    align-items: center;
-    min-height: calc(100vh - 1rem);
+	display: flex;
+	align-items: center;
+	min-height: calc(100vh - 1rem);
 }
 
 .accordion-item {
-    overflow: hidden;
-    margin-bottom: 20px;
-    border-bottom: none;
-    transition: max-height 0.3s ease;
+	overflow: hidden;
+	margin-bottom: 20px;
+	border-bottom: none;
+	transition: max-height 0.3s ease;
 }
 
 .accordion-button {
-    border-radius: 30px !important;
-    box-shadow: none !important;
-}
-
-.accordion-button:hover {
-    background-color: #FF8A08 !important;
+	border-radius: 30px !important;
+	box-shadow: none !important;
 }
 
 .accordion-button:focus {
-    outline: none;
+	outline: none;
 }
 
 .accordion-body {
-    border-radius: 5px;
-    background-color: #ffffff;
+	border-radius: 5px;
+	background-color: #ffffff;
 }
 
 .accordion-collapse {
-    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+	transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
 }
 
 .map-responsive {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
 }
 
 .map-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 
 .btn-map {
-    background-color: #031633;
-    color: #ffffff;
-    border-radius: 30px;
+	background-color: #031633;
+	color: #ffffff;
+	border-radius: 30px;
 }
 
 .btn-map:hover {
-    background-color: #032830;
-    color: #ffffff;
+	background-color: #032830;
+	color: #ffffff;
 }
 
 .social-btn {
-    font-size: 25px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    transition: opacity 0.3s ease;
+	font-size: 1.5em;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.3s ease, background-color 0.3s ease;
+	margin-right: 0.5rem;
+}
+
+.social-btn:last-child {
+	margin-right: 0;
 }
 
 .social-btn:hover {
-    opacity: 0.8;
+	opacity: 0.8;
+	background-color: #212529;
 }
+
 
 .disabled {
-    pointer-events: none;
+	pointer-events: none;
 }
 
-
 #clock .time {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 #clock .date {
-    font-size: 14px;
-    color: #666;
+	font-size: 14px;
+	color: #666;
 }
 
 .info-wbp {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	cursor: pointer;
 }
 
 .info-wbp marquee {
-    animation: smoothMarquee 20s linear infinite;
+	animation: smoothMarquee 20s linear infinite;
 }
 
 .info-wbp marquee:hover {
-    animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+@media (max-width: 576px) {
+	.social-btn {
+		width: 40px;
+		height: 40px;
+		font-size: 1.2em;
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .hero-section {
-        border-radius: 0 0 5px 5px;
-        margin: 0 5px 0 5px;
-    }
+	.hero-section {
+		border-radius: 0 0 5px 5px;
+		margin: 0 5px;
+	}
 }
 
 @media screen and (min-width: 1024px) {
-    .hero-section {
-        border-radius: 0 0 5px 5px;
-        margin: 0 5px 0 5px;
-    }
+	.hero-section {
+		border-radius: 0 0 5px 5px;
+		margin: 0 5px;
+	}
 }
