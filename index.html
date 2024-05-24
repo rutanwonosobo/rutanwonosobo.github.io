@@ -24,7 +24,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/eliyantosarage-dev/Font-Awesome-Pro@main/web/css/all.min.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/all.css">
 </head>
 
 <body>
@@ -52,19 +52,18 @@
                     </div>
                     <div class="card-header text-center">
                         <h1 class="brand fw-bold text-uppercase mt-5">Sayap Tawon</h1>
-                        <h2 class="fs-6 fw-bold text-uppercase mb-4">Sistem Layanan Terpadu Rutan Wonosobo</h2>
+                        <h2 class="fs-6 fw-bold text-uppercase my-4">Sistem Layanan Terpadu Rutan Wonosobo</h2>
                     </div>
                     <div class="card-body">
                         <div id="clock" class="text-center fw-bold shadow-sm p-3 mb-4 bg-body-emphasis rounded">
                             <div class="time" id="waktu"></div>
                             <div class="date" id="tanggal"></div>
                         </div>
-                        <div class="info-wbp mt-4 mb-4">
-                            <marquee behavior="scroll" direction="left" scrollamount="5"
-                                class="text-bg-primary p-2 shadow-sm bg-body-emphasis rounded-pill shadow"
+                        <div class="info-wbp my-4">
+                            <marquee behavior="scroll" direction="left" scrollamount="5" class="p-2 bg-body-emphasis"
                                 id="marqueeData">Loading data...</marquee>
                         </div>
-                        <p class="text-center fw-bold text-uppercase mt-2 mb-4">Layanan yang tersedia</p>
+                        <p class="text-center fw-bold text-uppercase my-4">Layanan yang tersedia</p>
                         <div class="accordion accordion-flush" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -118,8 +117,8 @@
 
                         <hr>
 
-                        <div class="d-grid gap-2 mt-4 mb-4">
-                            <a href="#" class="btn btn-primary shadow" role="button" target="_blank">
+                        <div class="d-grid gap-2 my-4">
+                            <a href="#" class="btn btn-primary shadow" role="button">
                                 <i class="fa-solid fa-cloud-arrow-down me-2"></i>Click Me (active)
                             </a>
                             <a href="#" class="btn btn-secondary shadow disabled" role="button" aria-disabled="true"
@@ -130,7 +129,7 @@
 
                         <hr>
 
-                        <div class="d-grid gap-2 mt-4 mb-4">
+                        <div class="d-grid gap-2 my-4">
                             <button type="button" class="btn btn-map shadow" data-bs-toggle="modal"
                                 data-bs-target="#mapModal">
                                 <i class="fa-regular fa-location-dot me-2"></i>Buka Peta
@@ -139,44 +138,52 @@
 
                         <hr>
 
-                        <div class="d-flex gap-2 mx-auto justify-content-center mt-4 mb-4">
-                            <button class="btn btn-danger btn-sm shadow w-100" type="button" data-bs-toggle="modal"
-                                data-bs-target="#TelephoneModal">
-                                <i class="fa-regular fa-phone-office shadow contact-icon"></i>
-                                <span>Telephone</span>
-                            </button>
-                            <button class="btn btn-primary btn-sm shadow w-100" type="button" data-bs-toggle="modal"
-                                data-bs-target="#FaximileModal">
-                                <i class="fa-regular fa-fax shadow contact-icon"></i>
-                                <span>Faxsimile</span>
-                            </button>
-                            <button class="btn btn-success btn-sm shadow w-100" type="button" data-bs-toggle="modal"
-                                data-bs-target="#WhatsAppModal">
-                                <i class="fa-brands fa-whatsapp shadow contact-icon"></i>
-                                <span>WhatsApp</span>
-                            </button>
+                        <div class="d-flex justify-content-center align-items-center my-2 gap-2">
+                            <div class="col-4 text-center">
+                                <div class="contact-box w-100 p-3 rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#phoneModal">
+                                    <i class="fa-regular fa-phone-office mb-2"></i>
+                                    <h5 class="mt-2">Telepon</h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="contact-box w-100 p-3 rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#faxModal">
+                                    <i class="fa-regular fa-fax mb-2"></i>
+                                    <h5 class="mt-2">Faksimile</h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="contact-box w-100 p-3 rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#whatsappModal">
+                                    <i class="fa-brands fa-whatsapp mb-2"></i>
+                                    <h5 class="mt-2">WhatsApp</h5>
+                                </div>
+                            </div>
                         </div>
+
 
                         <hr>
 
-                        <div class="d-flex justify-content-center mt-4 mb-2">
+                        <div class="d-flex flex-wrap justify-content-center mt-4 mb-2">
                             <a href="https://www.facebook.com/rutanwonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                                class="btn text-bg-dark social-btn rounded-circle shadow m-2">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://x.com/RutanWonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                            <a href="https://x.com/RutanWonosobo?s=08" target="_blank"
+                                class="btn text-bg-dark social-btn rounded-circle shadow m-2">
                                 <i class="fa-brands fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/rutanwonosobo/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow me-2">
+                            <a href="https://www.instagram.com/direct/t/116710499713285" target="_blank"
+                                class="btn text-bg-dark social-btn rounded-circle shadow m-2">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href="https://rutanwonosobo.kemenkumham.go.id/" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow">
+                                class="btn text-bg-dark social-btn rounded-circle shadow m-2">
                                 <i class="fa-regular fa-earth-asia"></i>
                             </a>
                         </div>
+
                     </div>
                     <div class="card-footer text-muted text-center">
                         <p class="m-0 p-0"><small>Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.</small></p>
@@ -245,30 +252,32 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center align-items-center">
-                    <h5 class="modal-title text-uppercase" id="AboutModalLabel"><i
+                    <h5 class="modal-title text-uppercase fw-bold" id="AboutModalLabel"><i
                             class="fa-regular fa-bee me-2"></i>Tentang Sayap Tawon <h6><span
-                                class="badge rounded-pill text-bg-secondary ms-2">pre-release</span></h6>
+                                class="badge rounded-pill text-bg-primary font-monospace ms-2 px-3">pre-release</span>
+                        </h6>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <div class="row">
-                        <h3 class="fw-bold text-uppercase mt-4 mb-4">development team</h3>
+                        <h3 class="h2 fw-bold text-uppercase mt-2 mb-4 pb-4 text-secondary border-bottom border-2">
+                            Development Team</h3>
                         <div
                             class="col-md-6 ms-auto d-flex flex-column justify-content-center align-items-center author">
-                            <h5 class="text-uppercase fw-bold">Karutan Wonosobo</h5>
+                            <h5 class="h4 text-uppercase fw-bold mb-3">Karutan Wonosobo</h5>
                             <img src="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/narya.webp"
                                 alt="Narya, Amd. IP., S.H." class="img-fluid rounded shadow">
-                            <p class="fw-bold mt-4 mb-2">Narya, Amd. IP., S.H.</p>
-                            <p class="fst-italic">(App Initiator)</p>
+                            <p class="fs-6 fw-bold my-2">Narya, Amd. IP., S.H.</p>
+                            <p class="fst-italic mb-4">(App Initiator)</p>
                         </div>
                         <div
                             class="col-md-6 ms-auto d-flex flex-column justify-content-center align-items-center author">
-                            <h5 class="text-uppercase fw-bold">Anggota Regu Pengamanan</h5>
+                            <h5 class="h4 text-uppercase fw-bold mb-3">Anggota Regu Pengamanan</h5>
                             <img src="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/eliyantosarage.webp"
                                 alt="Eliyanto Sarage" class="img-fluid rounded shadow">
-                            <p class="fw-bold mt-4 mb-2">Eliyanto Sarage</p>
-                            <p class="fst-italic">(App Developer)</p>
+                            <p class="fs-6 fw-bold my-2">Eliyanto Sarage</p>
+                            <p class="fst-italic mb-4">(App Developer)</p>
                         </div>
                     </div>
 
@@ -330,12 +339,12 @@
         </div>
     </div>
 
-    <!-- Modal Telephone -->
-    <div class="modal fade" id="TelephoneModal" tabindex="-1" aria-labelledby="TelephoneModalLabel" aria-hidden="true">
+    <!-- Modal for Telepon -->
+    <div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="phoneModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="TelephoneModalLabel"><i
+                    <h5 class="modal-title fw-bold" id="phoneModalLabel"><i
                             class="fa-regular fa-phone-office me-2"></i>Telephone</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -346,13 +355,13 @@
         </div>
     </div>
 
-    <!-- Modal Faximile -->
-    <div class="modal fade" id="FaximileModal" tabindex="-1" aria-labelledby="FaximileModalLabel" aria-hidden="true">
+    <!-- Modal for Faksimile -->
+    <div class="modal fade" id="faxModal" tabindex="-1" aria-labelledby="faxModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="FaximileModalLabel"><i
-                            class="fa-regular fa-fax me-2"></i>Faximile</h5>
+                    <h5 class="modal-title fw-bold" id="faxModalLabel"><i class="fa-regular fa-fax me-2"></i>Faximile
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center fw-bold">
@@ -362,12 +371,12 @@
         </div>
     </div>
 
-    <!-- Modal WhatsApp -->
-    <div class="modal fade" id="WhatsAppModal" tabindex="-1" aria-labelledby="WhatsAppModalLabel" aria-hidden="true">
+    <!-- Modal for WhatsApp -->
+    <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="WhatsAppModalLabel"><i
+                    <h5 class="modal-title fw-bold" id="whatsappModalLabel"><i
                             class="fa-brands fa-whatsapp me-2"></i>Aduan & Informasi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
