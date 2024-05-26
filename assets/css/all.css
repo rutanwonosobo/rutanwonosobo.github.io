@@ -14,10 +14,10 @@ html {
 	overflow-x: hidden;
 }
 
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
+	width: 0;
+	background: transparent;
 }
 
 body {
@@ -71,17 +71,17 @@ ol {
 }
 
 .modal {
-    overflow-y: auto;
+	overflow-y: auto;
 }
 
 .modal-dialog {
-    overflow-y: auto;
+	overflow-y: auto;
 }
 
 .modal::-webkit-scrollbar,
 .modal-dialog::-webkit-scrollbar {
-    width: initial;
-    background: initial;
+	width: initial;
+	background: initial;
 }
 
 .container {
