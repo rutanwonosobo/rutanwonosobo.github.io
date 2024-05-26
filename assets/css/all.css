@@ -14,6 +14,12 @@ html {
 	overflow-x: hidden;
 }
 
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
 body {
 	font-family: 'Poppins', Arial, sans-serif;
 	background-color: #f8f9fa;
@@ -62,6 +68,20 @@ ol {
 ul,
 ol {
 	list-style: none;
+}
+
+.modal {
+    overflow-y: auto;
+}
+
+.modal-dialog {
+    overflow-y: auto;
+}
+
+.modal::-webkit-scrollbar,
+.modal-dialog::-webkit-scrollbar {
+    width: initial;
+    background: initial;
 }
 
 .container {
@@ -160,7 +180,7 @@ ol {
 
 .accordion-item {
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-bottom: none;
 }
 
@@ -194,21 +214,19 @@ ol {
 	outline: none;
 }
 
-.accordion-body {
-	border-radius: 5px;
-	background-color: #ffffff;
-}
-
 .accordion-collapse {
 	transition: max-height 0.5s ease;
 }
 
 .accordion-body {
+	border-radius: 5px;
+	background-color: #ffffff;
 	opacity: 0;
 	transition: opacity 0.5s ease, transform 0.5s ease;
 	transform: translateY(-10px);
 	font-size: 0.9rem;
-	text-align: justify;
+	padding: 0;
+	margin: 10px 0 10px 0;
 }
 
 .accordion-collapse.show .accordion-body {
