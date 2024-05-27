@@ -226,6 +226,12 @@ ol {
 	transition: max-height 0.5s ease;
 }
 
+.accordion-body p {
+	margin-bottom: 1em;
+	padding: 0 10px 0 10px;
+	;
+}
+
 .accordion-body {
 	border-radius: 5px;
 	background-color: #ffffff;
@@ -294,18 +300,18 @@ ol {
 	color: #666;
 }
 
-.info-wbp {
+.info-penghuni {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	cursor: pointer;
 }
 
-.info-wbp marquee {
+.info-penghuni marquee {
 	animation: smoothMarquee 20s linear infinite;
 }
 
-.info-wbp marquee:hover {
+.info-penghuni marquee:hover {
 	animation-play-state: paused;
 }
 
@@ -325,6 +331,21 @@ ol {
 
 .pengumuman .btn i {
 	font-size: 20px;
+}
+
+.instagram-media {
+	text-align: center;
+	background: #ffffff;
+	border: 0;
+	border-radius: 3px;
+	box-shadow: 0 0 1px 0 rgba(0, 0, 0, .5), 0 1px 10px 0 rgba(0, 0, 0, .15);
+	margin: 1px;
+	max-width: 540px;
+	min-width: 326px;
+	padding: 0;
+	width: 99.375%;
+	width: -webkit-calc(100% - 2px);
+	width: calc(100% - 2px)
 }
 
 @media (max-width: 576px) {
