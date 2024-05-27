@@ -9,12 +9,12 @@ function aturDataMarquee() {
     var marquee = document.getElementById('marqueeData');
     
     // Data yang ingin diatur
-    var totalWBP = 142;
-    var jumlahTahanan = 54;
-    var lakiLakiTahanan = 52;
+    var totalWBP = 140;
+    var jumlahTahanan = 56;
+    var lakiLakiTahanan = 54;
     var perempuanTahanan = 2;
-    var jumlahNarapidana = 86;
-    var lakiLakiNarapidana = 84;
+    var jumlahNarapidana = 84;
+    var lakiLakiNarapidana = 82;
     var perempuanNarapidana = 2;
     
     // Format teks baru untuk dimasukkan ke dalam marquee
