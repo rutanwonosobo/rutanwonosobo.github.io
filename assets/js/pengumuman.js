@@ -103,4 +103,4 @@ function perbaruiBadgePengumuman() {
     } else {
         badge.classList.add('d-none');
     }
-}
+};
