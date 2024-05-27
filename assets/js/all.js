@@ -18,3 +18,8 @@ document.querySelector('.info-wbp marquee').addEventListener('mouseover', functi
 document.querySelector('.info-wbp marquee').addEventListener('mouseout', function () {
     this.start();
 });
+$(document).ready(function () {
+    $('.modal').on('show.bs.modal', function () {
+        $('.modal').not($(this)).modal('hide');
+    });
+});
