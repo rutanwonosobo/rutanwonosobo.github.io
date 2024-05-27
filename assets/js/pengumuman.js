@@ -1,5 +1,3 @@
-// Script di pengumuman.js
-
 // Fungsi untuk mengatur konten pengumuman
 function dapatkanIsiPengumuman() {
     // Judul pengumuman
@@ -76,6 +74,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Memperbarui badge pengumuman saat halaman dimuat
     perbaruiBadgePengumuman();
+
+    // Event listener untuk tombol notifikasi
+    var isModalOpen = false;
+    notifikasiButton.addEventListener('click', function () {
+        // Cek apakah modal sedang terbuka
+        if (!isModalOpen) {
+            isModalOpen = true;
+            tampilkanModal();
+
+            // Menambahkan event listener untuk mengatur flag ketika modal ditutup
+            var modalElement = document.getElementById('modalPengumuman');
+            modalElement.addEventListener('hidden.bs.modal', function () {
+                isModalOpen = false;
+            }, { once: true });
+        }
+    });
 });
 
 // Fungsi untuk memperbarui badge berdasarkan konten pengumuman
@@ -90,19 +104,3 @@ function perbaruiBadgePengumuman() {
         badge.classList.add('d-none');
     }
 }
-
-// Event listener untuk tombol notifikasi
-document.addEventListener('DOMContentLoaded', function () {
-    var notifikasiButton = document.querySelector('.pengumuman button');
-    notifikasiButton.addEventListener('click', function () {
-        // Pastikan modal ditutup sebelum menampilkan yang baru
-        var modalElement = document.getElementById('modalPengumuman');
-        if ($(modalElement).hasClass('show')) {
-            var modalInstance = bootstrap.Modal.getInstance(modalElement);
-            modalInstance.hide();
-        }
-
-        // Tampilkan modal
-        tampilkanModal();
-    });
-});
