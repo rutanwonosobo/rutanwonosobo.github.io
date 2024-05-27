@@ -72,7 +72,7 @@
 
 * **Faksimile:** (0286) 321384
 
-* **Aduan & Informasi:** (+62) 895-2715-4440 ([WhatsApp](https://api.whatsapp.com/send?phone=6289527154440))
+* **Aduan & Informasi:** (+62) 895-1072-5657 ([WhatsApp](https://api.whatsapp.com/send?phone=6289510725657))
 
 * **Email:** \[alamat email dihapus\]
 
