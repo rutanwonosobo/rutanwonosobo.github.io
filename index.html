@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="./assets/css/all.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"></script>
+    <script src="./assets/js/config-firebase.js"></script>
 </head>
 
 <body>
@@ -75,13 +78,8 @@
                                 <div class="card-header text-center fw-bold bg-primary text-white">
                                     <i class="bi bi-people-fill me-2"></i>Pengunjung
                                 </div>
-                                <div class="card-body">
-                                    <p>Live Visitor: <span id="liveVisitorCount">Loading...</span></p>
-                                    <p>Today: <span id="todayCount">Loading...</span></p>
-                                    <p>Yesterday: <span id="yesterdayCount">Loading...</span></p>
-                                    <p>This Week: <span id="weekCount">Loading...</span></p>
-                                    <p>This Month: <span id="monthCount">Loading...</span></p>
-                                    <p>Total: <span id="totalCount">Loading...</span></p>
+                                <div id="visitorStats" class="card-body">
+                                    <p>Total Pengunjung: <span id="totalVisitors">loading...</span></p>
                                 </div>
                             </div>
                         </div>
@@ -402,8 +400,6 @@
         <script src="./assets/js/logo.js"></script>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/sosial-media.js"></script>
-        <script src="./assets/js/config-firebase.js" type="module"></script>
-        <script src="./assets/js/live-visitor-counter.js"></script>
 </body>
 
 </html>
