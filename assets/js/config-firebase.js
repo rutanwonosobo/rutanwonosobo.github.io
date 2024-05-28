@@ -14,7 +14,7 @@ console.log("Firebase initialized");
 
 // Referensi ke database Firebase
 var dbRef = firebase.database().ref('visitor_count');
-dbRef.once('value').then(function(snapshot) {
+dbRef.once('value').then(function (snapshot) {
   console.log("Connected to Firebase, snapshot: ", snapshot.val());
 });
 
@@ -40,7 +40,7 @@ console.log("This Month: ", thisMonth);
 
 // Fungsi untuk memperbarui hitungan pengunjung
 function updateVisitorCounts() {
-  dbRef.transaction(function(currentData) {
+  dbRef.transaction(function (currentData) {
     console.log("Current Data: ", currentData);
     if (currentData === null) {
       return {
@@ -63,9 +63,9 @@ function updateVisitorCounts() {
       console.log("Updates: ", updates);
       return updates;
     }
-  }).then(function(result) {
+  }).then(function (result) {
     console.log("Transaction result: ", result);
-  }).catch(function(error) {
+  }).catch(function (error) {
     console.error("Transaction failed: ", error);
   });
 }
@@ -74,7 +74,7 @@ function updateVisitorCounts() {
 updateVisitorCounts();
 
 // Menampilkan hitungan pengunjung di halaman
-dbRef.on('value', function(snapshot) {
+dbRef.on('value', function (snapshot) {
   var visitorCounts = snapshot.val();
   if (visitorCounts) {
     console.log("Visitor Counts: ", visitorCounts);
