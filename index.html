@@ -24,9 +24,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="./assets/css/all.css">
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"></script>
-    <script src="./assets/js/config-firebase.js"></script>
 </head>
 
 <body>
@@ -78,8 +75,13 @@
                                 <div class="card-header text-center fw-bold bg-primary text-white">
                                     <i class="bi bi-people-fill me-2"></i>Pengunjung
                                 </div>
-                                <div id="visitorStats" class="card-body">
-                                    <p>Total Pengunjung: <span id="totalVisitors">loading...</span></p>
+                                <div class="card-body">
+                                    <p>Jumlah Pengunjung Hari Ini: <span id="todayCount"></span></p>
+                                    <p>Jumlah Pengunjung Kemarin: <span id="yesterdayCount"></span></p>
+                                    <p>Jumlah Pengunjung Minggu Ini: <span id="thisWeekCount"></span></p>
+                                    <p>Jumlah Pengunjung Bulan Ini: <span id="thisMonthCount"></span></p>
+                                    <p>Total Pengunjung: <span id="totalCount"></span></p>
+
                                 </div>
                             </div>
                         </div>
@@ -400,6 +402,10 @@
         <script src="./assets/js/logo.js"></script>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/sosial-media.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+        <script src="./assets/js/config-firebase.js"></script>
 </body>
 
 </html>
