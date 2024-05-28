@@ -348,6 +348,10 @@ ol {
 	width: calc(100% - 2px)
 }
 
+.copyright {
+	font-size: 12px;
+}
+
 @media (max-width: 576px) {
 	.social-btn {
 		width: 40px;
