@@ -9,9 +9,9 @@ function aturDataMarquee() {
     var marquee = document.getElementById('marqueeData');
     
     // Data yang ingin diatur
-    var totalWBP = 140;
-    var jumlahTahanan = 56;
-    var lakiLakiTahanan = 54;
+    var totalWBP = 141;
+    var jumlahTahanan = 57;
+    var lakiLakiTahanan = 55;
     var perempuanTahanan = 2;
     var jumlahNarapidana = 84;
     var lakiLakiNarapidana = 82;
