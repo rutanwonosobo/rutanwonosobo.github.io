@@ -27,7 +27,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-    <script src="./assets/js/config-firebase.js"></script>
 </head>
 
 <body>
@@ -74,22 +73,6 @@
                                 id="marqueeData">Loading data penghuni...</marquee>
                         </div>
 
-                        <div class="col-md-12 text-center my-4">
-                            <div class="card shadow-sm">
-                                <div class="card-header text-center fw-bold bg-primary text-white">
-                                    <i class="bi bi-people-fill me-2"></i>Pengunjung
-                                </div>
-                                <div class="card-body">
-                                    <p>Jumlah Pengunjung Hari Ini: <span id="todayCount"></span></p>
-                                    <p>Jumlah Pengunjung Kemarin: <span id="yesterdayCount"></span></p>
-                                    <p>Jumlah Pengunjung Minggu Ini: <span id="thisWeekCount"></span></p>
-                                    <p>Jumlah Pengunjung Bulan Ini: <span id="thisMonthCount"></span></p>
-                                    <p>Total Pengunjung: <span id="totalCount"></span></p>
-
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Papan Informasi Layanan Section -->
                         <div class="card shadow-sm">
                             <div class="card-header text-center fw-bold bg-primary text-white">
@@ -111,11 +94,11 @@
                                                     <tr>
                                                         <td class="text-center py-4">
                                                             <ul class="list-unstyled mb-0">
-                                                                <li class="fw-bold mb-2">Senin - Kamis:</li>
-                                                                <li>08.00 - 11.00 WIB (PAGI)</li>
-                                                                <li>13.00 - 14.00 WIB (SIANG)</li>
-                                                                <li class="fw-bold my-2">Jum'at & Sabtu:</li>
-                                                                <li>08.30 - 11.00 WIB</li>
+                                                                <li class="fw-bold py-0">Senin - Kamis:</li>
+                                                                <li class="py-0">08.00 - 11.00 WIB (PAGI)</li>
+                                                                <li class="py-0">13.00 - 14.00 WIB (SIANG)</li>
+                                                                <li class="fw-bold mt-2">Jum'at & Sabtu:</li>
+                                                                <li class="py-0">08.30 - 11.00 WIB</li>
                                                             </ul>
                                                         </td>
                                                     </tr>
@@ -136,13 +119,13 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="text-center py-4">
-                                                            <ul class="list-unstyled mb-0">
-                                                                <li class="fw-bold mb-2">Selasa & Kamis:</li>
-                                                                <li>Tahanan</li>
-                                                                <li class="fw-bold my-2">Senin & Rabu:</li>
-                                                                <li>Narapidana</li>
-                                                                <li class="fw-bold my-2">Jum'at & Sabtu:</li>
-                                                                <li>Khusus Napi Narkotika</li>
+                                                            <ul class="list-unstyled">
+                                                                <li class="fw-bold py-0">Selasa & Kamis:</li>
+                                                                <li class="py-0">Tahanan</li>
+                                                                <li class="fw-bold mt-2">Senin & Rabu:</li>
+                                                                <li class="py-0">Narapidana</li>
+                                                                <li class="fw-bold mt-2">Jum'at & Sabtu:</li>
+                                                                <li class="py-0">Khusus Napi Narkotika</li>
                                                             </ul>
                                                         </td>
                                                     </tr>
@@ -328,6 +311,57 @@
                                 </div>
                             </div>
 
+                            <!-- Live Visitors Count Section -->
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12 text-center my-2">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header text-center fw-bold text-bg-light">
+                                            <i class="bi bi-people-fill me-2"></i>Live Visitors
+                                        </div>
+                                        <div class="card-body p-2 m-0">
+                                            <div class="table-responsive">
+                                                <table class="table table-borderless m-0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-end py-0" style="width: 50%;">Aktif:</td>
+                                                            <td class="text-start py-0" style="width: 50%;"><span
+                                                                    id="activeVisitorsCount" class="fw-bold"></span>
+                                                                Orang</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-end py-0">Hari Ini:</td>
+                                                            <td class="text-start py-0"><span id="todayCount"
+                                                                    class="fw-bold"></span> Orang</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-end py-0">Kemarin:</td>
+                                                            <td class="text-start py-0"><span id="yesterdayCount"
+                                                                    class="fw-bold"></span> Orang</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-end py-0">Minggu Ini:</td>
+                                                            <td class="text-start py-0"><span id="thisWeekCount"
+                                                                    class="fw-bold"></span> Orang</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-end py-0">Bulan Ini:</td>
+                                                            <td class="text-start py-0"><span id="thisMonthCount"
+                                                                    class="fw-bold"></span> Orang</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-end py-0">Total:</td>
+                                                            <td class="text-start py-0"><span id="totalCount"
+                                                                    class="fw-bold"></span> Orang</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Hubungi Kami Section -->
                             <hr>
                             <div class="contact-container text-center align-items-stretch">
@@ -406,6 +440,7 @@
         <script src="./assets/js/logo.js"></script>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/sosial-media.js"></script>
+        <script src="./assets/js/config-firebase.js"></script>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZW152V3VP"></script>
