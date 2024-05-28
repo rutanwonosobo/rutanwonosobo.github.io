@@ -115,7 +115,7 @@ var phoneModal = `
                     class="bi bi-telephone-fill me-2"></i>Telephone</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body text-center fw-bold">
+        <div class="modal-body text-center fw-bold small">
             (0286) 321030
         </div>
     </div>
@@ -125,26 +125,30 @@ var phoneModal = `
 
 document.write(phoneModal);
 
-// Pengaturan Modal Faximile
-var faxModal = `
-<div class="modal fade" id="faxModal" tabindex="-1" aria-labelledby="faxModalLabel" aria-hidden="true">
+// Pengaturan Modal E-mail
+var emailModal = `
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="fs-6 modal-title text-uppercase fw-bold" id="faxModalLabel"><i
-                        class="bi bi-printer-fill me-2"></i>Faximile
+                <h5 class="fs-6 modal-title text-uppercase fw-bold" id="emailModalLabel"><i
+                        class="bi bi-envelope-at-fill me-2"></i>E-Mail
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center fw-bold">
-                (0286) 321384
+            <div class="modal-body text-center fw-bold small">
+                rutanwsb@gmail.com
             </div>
+            <div class="modal-footer justify-content-center">
+            <a href="mailto:rutanwsb@gmail.com" class="btn btn-primary btn-sm w-100"
+                role="button" target="_blank">Kirim Email</a>
+        </div>
         </div>
     </div>
 </div>
 `;
 
-document.write(faxModal);
+document.write(emailModal);
 
 // Pengaturan Modal WhatsApp
 var whatsappModal = `
@@ -156,12 +160,12 @@ var whatsappModal = `
                         class="bi bi-whatsapp me-2"></i>Aduan & Informasi</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center fw-bold">
+            <div class="modal-body text-center fw-bold small">
                 (+62) 895-1072-5657
             </div>
             <div class="modal-footer justify-content-center">
                 <a href="https://api.whatsapp.com/send?phone=6289510725657" class="btn btn-primary btn-sm w-100"
-                    role="button" target="_blank">open in whatsapp</a>
+                    role="button" target="_blank">Kirim Pesan</a>
             </div>
         </div>
     </div>
@@ -195,7 +199,7 @@ var badgePengumuman = `
 <div class="pengumuman sticky-bottom d-block d-lg-none text-center">
 <button type="button" class="btn btn-primary position-relative rounded-circle">
     <i class="bi bi-bell-fill"></i>
-    <span class="position-absolute top-0 end-0 translate-middle-y badge shadow-sm rounded-circle bg-light"
+    <span class="position-absolute top-0 end-0 translate-middle-y badge shadow-sm rounded-circle bg-light p-0"
         id="badgePengumuman">
         <i class="bi bi-1-circle-fill text-danger shadow-sm fs-6"></i>
     </span>
