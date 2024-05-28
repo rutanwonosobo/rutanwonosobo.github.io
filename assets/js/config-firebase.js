@@ -1,4 +1,4 @@
-// Konfigurasi Firebase
+// Inisialisasi Firebase
 var firebaseConfig = {
   apiKey: "AIzaSyAQqCb4obTgFMozVOg3JqJJ-ZCmdPhITLs",
   authDomain: "rutan-wonosobo-0.firebaseapp.com",
@@ -8,32 +8,19 @@ var firebaseConfig = {
   appId: "1:587999781707:web:7fb68389a77364bb9a7ece",
   measurementId: "G-2ZW152V3VP"
 };
-// Inisialisasi Firebase
 firebase.initializeApp(firebaseConfig);
-// Referensi ke Firebase Database
-var database = firebase.database();
-var visitorsRef = database.ref('visitors');
+firebase.analytics();
 
-// Fungsi untuk menambahkan pengunjung
-function addVisitor() {
-  var today = new Date().toISOString().slice(0, 10);
-  var path = 'statistics/' + today;
-  visitorsRef.child(path).transaction(function (currentValue) {
-    return (currentValue || 0) + 1;
-  });
-}
+// Referensi ke database Firebase
+var dbRef = firebase.database().ref('visitor_count');
 
-// Fungsi untuk menampilkan statistik pengunjung
-function displayVisitorStats() {
-  var totalRef = visitorsRef.child('total');
-  totalRef.on('value', function (snapshot) {
-    var totalVisitors = snapshot.val() || 0;
-    document.getElementById('totalVisitors').textContent = totalVisitors;
-  });
-}
+// Ambil data pengunjung dari Firebase dan tampilkan di HTML
+dbRef.once('value').then(function (snapshot) {
+  var visitorCounts = snapshot.val();
 
-// Panggil fungsi ini saat halaman dimuat
-window.onload = function () {
-  addVisitor();
-  displayVisitorStats();
-};
+  document.getElementById('todayCount').textContent = visitorCounts.today;
+  document.getElementById('yesterdayCount').textContent = visitorCounts.yesterday;
+  document.getElementById('thisWeekCount').textContent = visitorCounts.this_week;
+  document.getElementById('thisMonthCount').textContent = visitorCounts.this_month;
+  document.getElementById('totalCount').textContent = visitorCounts.total;
+});
