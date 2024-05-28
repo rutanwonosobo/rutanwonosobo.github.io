@@ -10,7 +10,7 @@ var firebaseConfig = {
   measurementId: "G-2ZW152V3VP"
 };
 firebase.initializeApp(firebaseConfig);
-console.log("Firebase initialized");
+console.log("Firebase diinisialisasi");
 
 // Referensi ke database Firebase untuk hitungan pengunjung dan pengunjung yang sedang aktif
 var dbRef = firebase.database().ref('visitor_count');
@@ -42,15 +42,15 @@ function addActiveVisitor() {
       };
 
       activeVisitorsRef.child(visitorID).set(visitorData);
-      console.log("Added active visitor:", visitorID);
+      console.log("Pengunjung aktif ditambahkan:", visitorID);
 
       // Simpan informasi pengunjung dalam sesi menggunakan sessionStorage
       sessionStorage.setItem('visitorID', visitorID);
     } else {
-      console.log("Visitor already counted in this session, active visitor not added.");
+      console.log("Pengunjung sudah terhitung dalam sesi ini, pengunjung aktif tidak ditambahkan.");
     }
   } else {
-    console.log("Development mode, active visitor not added.");
+    console.log("Mode pengembangan, pengunjung aktif tidak ditambahkan.");
   }
 }
 
@@ -60,7 +60,7 @@ addActiveVisitor();
 // Fungsi untuk membersihkan sessionStorage saat sesi berakhir
 function clearSessionStorage() {
   sessionStorage.removeItem('visitorID');
-  console.log("Session storage cleared.");
+  console.log("Session storage dibersihkan.");
 }
 
 // Memanggil fungsi untuk membersihkan sessionStorage saat jendela/browser ditutup
@@ -81,45 +81,45 @@ function updateVisitorCounts() {
         };
       } else {
         let updates = {
-          today: (currentData.last_updated === today) ? currentData.today + 1 : 1,
+          today: (currentData.last_updated === today) ? currentData.today + 1 : currentData.today,
           yesterday: (currentData.last_updated === yesterday) ? currentData.yesterday : currentData.today,
-          this_week: (currentData.last_updated >= thisWeekStart) ? currentData.this_week + 1 : 1,
-          this_month: (currentData.last_updated.slice(0, 7) === thisMonth) ? currentData.this_month + 1 : 1,
+          this_week: (currentData.last_updated >= thisWeekStart) ? currentData.this_week + 1 : currentData.this_week,
+          this_month: (currentData.last_updated.slice(0, 7) === thisMonth) ? currentData.this_month + 1 : currentData.this_month,
           total: currentData.total + 1,
           last_updated: today
         };
-        console.log("Updates: ", updates);
+        console.log("Pembaruan: ", updates);
         return updates;
       }
     }).then(function (result) {
-      console.log("Transaction result: ", result);
+      console.log("Hasil transaksi: ", result);
     }).catch(function (error) {
-      console.error("Transaction failed: ", error);
+      console.error("Transaksi gagal: ", error);
     });
   } else {
-    console.log("Development mode or visitor already counted in this session, visitor count update skipped.");
+    console.log("Mode pengembangan atau pengunjung sudah terhitung dalam sesi ini, pembaruan hitungan pengunjung dilewati.");
   }
 }
 
 // Mendapatkan tanggal hari ini dengan offset waktu Jakarta
 var today = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 10);
-console.log("Today: ", today);
+console.log("Hari ini: ", today);
 
 // Mendapatkan tanggal kemarin dengan offset waktu Jakarta
 var yesterdayDate = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
 yesterdayDate.setDate(yesterdayDate.getDate() - 1);
 var yesterday = yesterdayDate.toISOString().slice(0, 10);
-console.log("Yesterday: ", yesterday);
+console.log("Kemarin: ", yesterday);
 
 // Mendapatkan tanggal ini minggu (dimulai dari hari Minggu) dengan offset waktu Jakarta
 var todayObj = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
 var thisWeekStart = new Date(todayObj.setDate(todayObj.getDate() - todayObj.getDay()));
 thisWeekStart = thisWeekStart.toISOString().slice(0, 10);
-console.log("This Week Start: ", thisWeekStart);
+console.log("Mulai Minggu Ini: ", thisWeekStart);
 
 // Mendapatkan bulan ini dengan offset waktu Jakarta
 var thisMonth = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 7);
-console.log("This Month: ", thisMonth);
+console.log("Bulan Ini: ", thisMonth);
 
 // Memperbarui hitungan pengunjung
 updateVisitorCounts();
@@ -128,7 +128,7 @@ updateVisitorCounts();
 dbRef.on('value', function (snapshot) {
   var visitorCounts = snapshot.val();
   if (visitorCounts) {
-    console.log("Visitor Counts: ", visitorCounts);
+    console.log("Hitungan Pengunjung: ", visitorCounts);
     document.getElementById('todayCount').textContent = visitorCounts.today || 0;
     document.getElementById('yesterdayCount').textContent = visitorCounts.yesterday || 0;
     document.getElementById('thisWeekCount').textContent = visitorCounts.this_week || 0;
@@ -140,6 +140,6 @@ dbRef.on('value', function (snapshot) {
 // Menampilkan jumlah pengunjung aktif di halaman
 activeVisitorsRef.on('value', function (snapshot) {
   var numActiveVisitors = snapshot.numChildren();
-  console.log("Active Visitors:", numActiveVisitors);
+  console.log("Pengunjung Aktif:", numActiveVisitors);
   document.getElementById('activeVisitorsCount').textContent = numActiveVisitors;
 });
