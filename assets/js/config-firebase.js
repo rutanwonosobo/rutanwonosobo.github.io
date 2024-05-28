@@ -1,5 +1,5 @@
-// Konfigurasi Firebase
-var firebaseConfig = {
+// Konfigurasi Firebase Anda
+const firebaseConfig = {
   apiKey: "AIzaSyAQqCb4obTgFMozVOg3JqJJ-ZCmdPhITLs",
   authDomain: "rutan-wonosobo-0.firebaseapp.com",
   databaseURL: "https://rutan-wonosobo-0-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -9,126 +9,66 @@ var firebaseConfig = {
   appId: "1:587999781707:web:7fb68389a77364bb9a7ece",
   measurementId: "G-2ZW152V3VP"
 };
+
+// Inisialisasi Firebase
 firebase.initializeApp(firebaseConfig);
-console.log("Firebase diinisialisasi");
+const database = firebase.database();
 
-// Referensi ke database Firebase untuk hitungan pengunjung dan pengunjung yang sedang aktif
-var dbRef = firebase.database().ref('visitor_count');
-var activeVisitorsRef = firebase.database().ref('active_visitors');
-
-// Mendapatkan URL saat ini
-var currentURL = window.location.href;
-
-// Fungsi untuk memeriksa apakah aplikasi berjalan di mode pengembangan
-function isDevelopmentMode() {
-  return currentURL.startsWith("http://127.0.0.1:3000/");
+// Fungsi untuk mendapatkan tanggal hari ini dalam format YYYY-MM-DD
+function getTodayDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
-// Fungsi untuk memeriksa apakah pengunjung sudah pernah terhitung sebelumnya dalam sesi ini
-function isVisitorCounted() {
-  var visitorID = sessionStorage.getItem('visitorID');
-  return visitorID !== null;
-}
+// Fungsi untuk mencatat kunjungan baru
+function recordNewVisit() {
+  const todayDate = getTodayDate();
+  const visitorCountsRef = database.ref('visitorCounts');
 
-// Fungsi untuk menambahkan pengunjung aktif jika belum terhitung dalam sesi ini
-function addActiveVisitor() {
-  if (!isDevelopmentMode()) {
-    var visitorID = sessionStorage.getItem('visitorID');
-    if (!visitorID) {
-      visitorID = Date.now().toString(); // ID pengunjung berdasarkan waktu saat ini
-      var visitorData = {
-        timestamp: firebase.database.ServerValue.TIMESTAMP,
-        url: currentURL
-      };
-
-      activeVisitorsRef.child(visitorID).set(visitorData);
-      console.log("Pengunjung aktif ditambahkan:", visitorID);
-
-      // Simpan informasi pengunjung dalam sesi menggunakan sessionStorage
-      sessionStorage.setItem('visitorID', visitorID);
+  visitorCountsRef.transaction(function (currentData) {
+    if (currentData) {
+      currentData.today = (currentData.today || 0) + 1;
+      currentData.thisWeek = (currentData.thisWeek || 0) + 1;
+      currentData.thisMonth = (currentData.thisMonth || 0) + 1;
+      currentData.total = (currentData.total || 0) + 1;
+      currentData.lastVisit = todayDate;
     } else {
-      console.log("Pengunjung sudah terhitung dalam sesi ini, pengunjung aktif tidak ditambahkan.");
+      currentData = {
+        today: 1,
+        yesterday: 0,
+        thisWeek: 1,
+        thisMonth: 1,
+        total: 1,
+        lastVisit: todayDate
+      };
     }
-  } else {
-    console.log("Mode pengembangan, pengunjung aktif tidak ditambahkan.");
-  }
+    return currentData;
+  });
 }
 
-// Memanggil fungsi untuk menambahkan pengunjung aktif saat halaman dimuat
-addActiveVisitor();
-
-// Fungsi untuk membersihkan sessionStorage saat sesi berakhir
-function clearSessionStorage() {
-  sessionStorage.removeItem('visitorID');
-  console.log("Session storage dibersihkan.");
+// Fungsi untuk memperbarui tampilan pengunjung secara real-time
+function updateVisitorCounts(snapshot) {
+  const data = snapshot.val();
+  document.getElementById('todayCount').textContent = data.today || 0;
+  document.getElementById('yesterdayCount').textContent = data.yesterday || 0;
+  document.getElementById('thisWeekCount').textContent = data.thisWeek || 0;
+  document.getElementById('thisMonthCount').textContent = data.thisMonth || 0;
+  document.getElementById('totalCount').textContent = data.total || 0;
 }
 
-// Memanggil fungsi untuk membersihkan sessionStorage saat jendela/browser ditutup
-window.addEventListener('beforeunload', clearSessionStorage);
+// Referensi ke lokasi data pengunjung di Realtime Database
+const visitorCountsRef = database.ref('visitorCounts');
 
-// Memperbarui hitungan pengunjung
-function updateVisitorCounts() {
-  if (!isDevelopmentMode() && !isVisitorCounted()) {
-    dbRef.transaction(function (currentData) {
-      if (currentData === null) {
-        return {
-          today: 1,
-          yesterday: 0,
-          this_week: 1,
-          this_month: 1,
-          total: 1,
-          last_updated: firebase.database.ServerValue.TIMESTAMP
-        };
-      } else {
-        var today = new Date(currentData.last_updated).toISOString().slice(0, 10);
-        var yesterdayDate = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
-        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-        var yesterday = yesterdayDate.toISOString().slice(0, 10);
-        var todayObj = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
-        var thisWeekStart = new Date(todayObj.setDate(todayObj.getDate() - todayObj.getDay()));
-        thisWeekStart = thisWeekStart.toISOString().slice(0, 10);
-        var thisMonth = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 7);
+// Mendengarkan perubahan data secara real-time
+visitorCountsRef.on('value', updateVisitorCounts);
 
-        let updates = {
-          today: (today === currentData.last_updated) ? currentData.today + 1 : currentData.today,
-          yesterday: (yesterday === currentData.last_updated.slice(0, 10)) ? currentData.yesterday : currentData.today,
-          this_week: (thisWeekStart === currentData.last_updated.slice(0, 10)) ? currentData.this_week + 1 : currentData.this_week,
-          this_month: (thisMonth === currentData.last_updated.slice(0, 7)) ? currentData.this_month + 1 : currentData.this_month,
-          total: currentData.total + 1,
-          last_updated: firebase.database.ServerValue.TIMESTAMP
-        };
-        console.log("Pembaruan: ", updates);
-        return updates;
-      }
-    }).then(function (result) {
-      console.log("Hasil transaksi: ", result);
-    }).catch(function (error) {
-      console.error("Transaksi gagal: ", error);
-    });
-  } else {
-    console.log("Mode pengembangan atau pengunjung sudah terhitung dalam sesi ini, pembaruan hitungan pengunjung dilewati.");
-  }
+// Cek URL halaman saat ini
+const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+
+// Panggil fungsi recordNewVisit() setiap kali halaman dimuat, kecuali di localhost
+if (!isLocalhost) {
+  recordNewVisit();
 }
-
-// Memperbarui hitungan pengunjung
-updateVisitorCounts();
-
-// Menampilkan hitungan pengunjung di halaman
-dbRef.on('value', function (snapshot) {
-  var visitorCounts = snapshot.val();
-  if (visitorCounts) {
-    console.log("Hitungan Pengunjung: ", visitorCounts);
-    document.getElementById('todayCount').textContent = visitorCounts.today || 0;
-    document.getElementById('yesterdayCount').textContent = visitorCounts.yesterday || 0;
-    document.getElementById('thisWeekCount').textContent = visitorCounts.this_week || 0;
-    document.getElementById('thisMonthCount').textContent = visitorCounts.this_month || 0;
-    document.getElementById('totalCount').textContent = visitorCounts.total || 0;
-  }
-});
-
-// Menampilkan jumlah pengunjung aktif di halaman
-activeVisitorsRef.on('value', function (snapshot) {
-  var numActiveVisitors = snapshot.numChildren();
-  console.log("Pengunjung Aktif:", numActiveVisitors);
-  document.getElementById('activeVisitorsCount').textContent = numActiveVisitors;
-});
