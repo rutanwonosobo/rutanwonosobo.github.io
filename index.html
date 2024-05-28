@@ -70,6 +70,22 @@
                                 id="marqueeData">Loading data penghuni...</marquee>
                         </div>
 
+                        <div class="col-md-12 text-center my-4">
+                            <div class="card shadow-sm">
+                                <div class="card-header text-center fw-bold bg-primary text-white">
+                                    <i class="bi bi-people-fill me-2"></i>Pengunjung
+                                </div>
+                                <div class="card-body">
+                                    <p>Live Visitor: <span id="liveVisitorCount">Loading...</span></p>
+                                    <p>Today: <span id="todayCount">Loading...</span></p>
+                                    <p>Yesterday: <span id="yesterdayCount">Loading...</span></p>
+                                    <p>This Week: <span id="weekCount">Loading...</span></p>
+                                    <p>This Month: <span id="monthCount">Loading...</span></p>
+                                    <p>Total: <span id="totalCount">Loading...</span></p>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Papan Informasi Layanan Section -->
                         <div class="card shadow-sm">
                             <div class="card-header text-center fw-bold bg-primary text-white">
@@ -89,7 +105,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td class="text-center small py-4">
+                                                        <td class="text-center py-4">
                                                             <ul class="list-unstyled mb-0">
                                                                 <li class="fw-bold mb-2">Senin - Kamis:</li>
                                                                 <li>08.00 - 11.00 WIB (PAGI)</li>
@@ -115,7 +131,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td class="text-center small py-4">
+                                                        <td class="text-center py-4">
                                                             <ul class="list-unstyled mb-0">
                                                                 <li class="fw-bold mb-2">Selasa & Kamis:</li>
                                                                 <li>Tahanan</li>
@@ -133,7 +149,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Layanan yang tersedia Section -->
                         <hr>
@@ -362,10 +377,10 @@
                         </div>
 
                         <!-- Footer Section -->
-                        <div class="card-footer text-muted text-center bg-transparent">
-                            <p class="m-0 p-0 small">Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.
+                        <div class="copyright card-footer text-muted text-center bg-transparent">
+                            <p class="m-0 p-0">Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.
                             </p>
-                            <p class="m-0 p-0 small">All Rights Reserved.</p>
+                            <p class="m-0 p-0">All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -387,6 +402,8 @@
         <script src="./assets/js/logo.js"></script>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/sosial-media.js"></script>
+        <script src="./assets/js/config-firebase.js" type="module"></script>
+        <script src="./assets/js/live-visitor-counter.js"></script>
 </body>
 
 </html>
