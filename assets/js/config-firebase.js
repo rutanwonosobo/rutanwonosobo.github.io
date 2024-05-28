@@ -54,14 +54,14 @@ function addActiveVisitor() {
   }
 }
 
-// Fungsi untuk menghapus informasi pengunjung dari sessionStorage saat sesi berakhir
+// Memanggil fungsi untuk menambahkan pengunjung aktif saat halaman dimuat
+addActiveVisitor();
+
+// Fungsi untuk membersihkan sessionStorage saat sesi berakhir
 function clearSessionStorage() {
   sessionStorage.removeItem('visitorID');
   console.log("Session storage cleared.");
 }
-
-// Menambahkan pengunjung aktif saat halaman dimuat
-addActiveVisitor();
 
 // Memanggil fungsi untuk membersihkan sessionStorage saat jendela/browser ditutup
 window.addEventListener('beforeunload', clearSessionStorage);
