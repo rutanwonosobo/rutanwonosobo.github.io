@@ -30,22 +30,27 @@ function isVisitorCounted() {
   return visitorID !== null;
 }
 
-// Fungsi untuk menambahkan pengunjung aktif dan memeriksa apakah pengunjung sudah pernah terhitung sebelumnya dalam sesi ini
+// Fungsi untuk menambahkan pengunjung aktif jika belum terhitung dalam sesi ini
 function addActiveVisitor() {
-  if (!isDevelopmentMode() && !isVisitorCounted()) {
-    var visitorID = Date.now().toString(); // ID pengunjung berdasarkan waktu saat ini
-    var visitorData = {
-      timestamp: Date.now(),
-      url: currentURL
-    };
+  if (!isDevelopmentMode()) {
+    var visitorID = sessionStorage.getItem('visitorID');
+    if (!visitorID) {
+      visitorID = Date.now().toString(); // ID pengunjung berdasarkan waktu saat ini
+      var visitorData = {
+        timestamp: Date.now(),
+        url: currentURL
+      };
 
-    activeVisitorsRef.child(visitorID).set(visitorData);
-    console.log("Added active visitor:", visitorID);
+      activeVisitorsRef.child(visitorID).set(visitorData);
+      console.log("Added active visitor:", visitorID);
 
-    // Simpan informasi pengunjung dalam sesi menggunakan sessionStorage
-    sessionStorage.setItem('visitorID', visitorID);
+      // Simpan informasi pengunjung dalam sesi menggunakan sessionStorage
+      sessionStorage.setItem('visitorID', visitorID);
+    } else {
+      console.log("Visitor already counted in this session, active visitor not added.");
+    }
   } else {
-    console.log("Development mode or visitor already counted in this session, active visitor not added.");
+    console.log("Development mode, active visitor not added.");
   }
 }
 
