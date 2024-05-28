@@ -70,10 +70,74 @@
                                 id="marqueeData">Loading data penghuni...</marquee>
                         </div>
 
+                        <!-- Papan Informasi Layanan Section -->
+                        <div class="card shadow-sm">
+                            <div class="card-header text-center fw-bold bg-primary text-white">
+                                <i class="bi bi-bell-fill me-2"></i>Papan Informasi Layanan
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Kolom Pertama -->
+                                    <div class="col-md-6">
+                                        <div class="table-wrapper justify-content-center align-items-center">
+                                            <table class="table table-bordered">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th class="text-center" scope="col"><i
+                                                                class="bi bi-clock-fill me-2"></i>Jam Layanan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center small py-4">
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li class="fw-bold mb-2">Senin - Kamis:</li>
+                                                                <li>08.00 - 11.00 WIB (PAGI)</li>
+                                                                <li>13.00 - 14.00 WIB (SIANG)</li>
+                                                                <li class="fw-bold my-2">Jum'at & Sabtu:</li>
+                                                                <li>08.30 - 11.00 WIB</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- Kolom Kedua -->
+                                    <div class="col-md-6">
+                                        <div class="table-wrapper justify-content-center align-items-center">
+                                            <table class="table table-bordered">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th class="text-center" scope="col"><i
+                                                                class="bi bi-calendar-fill me-2"></i>Hari Kunjungan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center small py-4">
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li class="fw-bold mb-2">Selasa & Kamis:</li>
+                                                                <li>Tahanan</li>
+                                                                <li class="fw-bold my-2">Senin & Rabu:</li>
+                                                                <li>Narapidana</li>
+                                                                <li class="fw-bold my-2">Jum'at & Sabtu:</li>
+                                                                <li>Khusus Napi Narkotika</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <!-- Layanan yang tersedia Section -->
                         <hr>
-                        <h4 class="fs-5 text-center fw-bold text-uppercase my-4"><a href="./layanan/index.html"
-                                rel="noopener noreferrer">Layanan yang tersedia</a></h4>
+                        <h4 class="fs-5 text-center fw-bold text-uppercase my-4">Daftar Layanan</h4>
                         <div class="accordion accordion-flush" id="accordionPelayanan">
 
                             <!-- Informasi Layanan Kunjungan dan Penitipan Barang -->
@@ -178,9 +242,21 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Buttons Section (hidden)
+                            <!-- Button Layanan Selengkapnya-->
+                            <div class="d-grid gap-2 mx-auto my-4">
+                                <!-- Tombol dengan ikon yang berfungsi sebagai tautan -->
+                                <a href="./layanan/" rel="noopener noreferrer"
+                                    class="btn btn-warning d-flex justify-content-between align-items-center rounded-pill">
+                                    <i
+                                        class="bi bi-emoji-grin-fill text-bg-light rounded-circle p-1 px-2 shadow-sm"></i><span><small>Lihat
+                                            Semua Layanan</small></span>
+                                    <i
+                                        class="bi bi-arrow-right-circle-fill text-bg-light rounded-circle p-1 px-2 shadow-sm"></i>
+                                </a>
+                            </div>
+
+                            <!-- Buttons Section (hidden)
                         <hr>
                         <div class="d-grid gap-2 my-4">
                             <button type="button" class="btn btn-primary"><i
@@ -205,108 +281,112 @@
                         </div>
                         -->
 
-                        <!-- Lokasi Rutan Section -->
-                        <hr>
-                        <div class="d-grid my-4">
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseLocation" aria-expanded="false"
-                                aria-controls="collapseLocation">
-                                <i class="bi bi-geo-alt-fill me-2"></i>Lokasi Rutan Wonosobo
-                            </button>
-                            <div class="collapse mt-4" id="collapseLocation">
-                                <div class="card card-body text-center">
-                                    <div class="responsive-maps my-2">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.942649844698!2d109.89921247371821!3d-7.360325872421276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aa056029da10b%3A0x1ae278eb49746082!2sRutan%20Klas%20IIB%20Wonosobo!5e0!3m2!1sid!2sid!4v1716294170690!5m2!1sid!2sid"
-                                            allowfullscreen="" loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    </div>
-                                    <div class="d-grid gap-2 mx-auto">
-                                        <a href="https://maps.app.goo.gl/KhnGaMs3pQRqDU336"
-                                            class="btn btn-secondary btn-sm shadow-sm"
-                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                                            role="button" target="_blank"><i class="bi bi-pin-map-fill me-2"></i>Open in
-                                            Google Maps</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Hubungi Kami Section -->
-                        <hr>
-                        <div class="contact-container text-center align-items-stretch">
-                            <h4 class="fs-5 fw-bold text-uppercase my-4">Hubungi Kami</h4>
-                            <div class="d-flex justify-content-center align-items-center my-2 gap-2">
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#phoneModal">
-                                        <i class="bi bi-telephone-fill mb-2"></i>
-                                        <h5 class="text-secondary mt-2">Telepon</h5>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#faxModal">
-                                        <i class="bi bi-printer-fill mb-2"></i>
-                                        <h5 class="text-secondary mt-2">Faksimile</h5>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#whatsappModal">
-                                        <i class="bi bi-whatsapp text-success mb-2"></i>
-                                        <h5 class="text-secondary mt-2">WhatsApp</h5>
+                            <!-- Lokasi Rutan Section -->
+                            <hr>
+                            <div class="d-grid my-4">
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseLocation" aria-expanded="false"
+                                    aria-controls="collapseLocation">
+                                    <i class="bi bi-geo-alt-fill me-2"></i>Lokasi Rutan Wonosobo
+                                </button>
+                                <div class="collapse mt-4" id="collapseLocation">
+                                    <div class="card card-body text-center">
+                                        <div class="responsive-maps my-2">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.942649844698!2d109.89921247371821!3d-7.360325872421276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aa056029da10b%3A0x1ae278eb49746082!2sRutan%20Klas%20IIB%20Wonosobo!5e0!3m2!1sid!2sid!4v1716294170690!5m2!1sid!2sid"
+                                                allowfullscreen="" loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                        <div class="d-grid gap-2 mx-auto">
+                                            <a href="https://maps.app.goo.gl/KhnGaMs3pQRqDU336"
+                                                class="btn btn-secondary btn-sm shadow-sm"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                                role="button" target="_blank"><i
+                                                    class="bi bi-pin-map-fill me-2"></i>Open in
+                                                Google Maps</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Hubungi Kami Section -->
+                            <hr>
+                            <div class="contact-container text-center align-items-stretch">
+                                <h4 class="fs-5 fw-bold text-uppercase my-4">Hubungi Kami</h4>
+                                <div class="d-flex justify-content-center align-items-center my-2 gap-2">
+                                    <div class="col-4">
+                                        <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
+                                            data-bs-toggle="modal" data-bs-target="#phoneModal">
+                                            <i class="bi bi-telephone-fill mb-2"></i>
+                                            <h5 class="text-secondary mt-2">Telepon</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
+                                            data-bs-toggle="modal" data-bs-target="#emailModal">
+                                            <i class="bi bi-envelope-at-fill text-danger mb-2"></i>
+                                            <h5 class="text-secondary mt-2">E-mail</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
+                                            data-bs-toggle="modal" data-bs-target="#whatsappModal">
+                                            <i class="bi bi-whatsapp text-success mb-2"></i>
+                                            <h5 class="text-secondary mt-2">WhatsApp</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Section -->
+                            <div class="d-flex flex-wrap justify-content-center my-4" id="socialMediaButtons">
+                                <a href="#" target="_blank"
+                                    class="btn text-bg-primary social-btn rounded-circle shadow-sm me-2"
+                                    id="facebookBtn">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="btn text-bg-dark social-btn rounded-circle shadow-sm me-2" id="twitterBtn">
+                                    <i class="bi bi-twitter-x"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="btn text-bg-danger social-btn rounded-circle shadow-sm me-2"
+                                    id="instagramBtn">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="btn text-bg-success social-btn rounded-circle shadow-sm" id="websiteBtn">
+                                    <i class="bi bi-globe-asia-australia"></i>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Social Media Section -->
-                        <div class="d-flex flex-wrap justify-content-center mt-4" id="socialMediaButtons">
-                            <a href="#" target="_blank"
-                                class="btn text-bg-primary social-btn rounded-circle shadow-sm me-2" id="facebookBtn">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow-sm me-2" id="twitterBtn">
-                                <i class="bi bi-twitter-x"></i>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="btn text-bg-danger social-btn rounded-circle shadow-sm me-2" id="instagramBtn">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            <a href="#" target="_blank" class="btn text-bg-success social-btn rounded-circle shadow-sm"
-                                id="websiteBtn">
-                                <i class="bi bi-globe-asia-australia"></i>
-                            </a>
+                        <!-- Footer Section -->
+                        <div class="card-footer text-muted text-center">
+                            <p class="m-0 p-0"><small>Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.</small>
+                            </p>
+                            <p class="m-0 p-0"><small>All Rights Reserved.</small></p>
                         </div>
-                    </div>
-
-                    <!-- Footer Section -->
-                    <div class="card-footer text-muted text-center">
-                        <p class="m-0 p-0"><small>Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.</small></p>
-                        <p class="m-0 p-0"><small>All Rights Reserved.</small></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/informasi-penghuni.js"></script>
-    <script src="./assets/js/clock.js"></script>
-    <script src="./assets/js/all.js"></script>
-    <script src="./assets/js/pengumuman.js"></script>
-    <script src="./assets/js/logo.js"></script>
-    <script src="./assets/js/modal.js"></script>
-    <script src="./assets/js/sosial-media.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <script src="./assets/js/informasi-penghuni.js"></script>
+        <script src="./assets/js/clock.js"></script>
+        <script src="./assets/js/all.js"></script>
+        <script src="./assets/js/pengumuman.js"></script>
+        <script src="./assets/js/logo.js"></script>
+        <script src="./assets/js/modal.js"></script>
+        <script src="./assets/js/sosial-media.js"></script>
 </body>
 
 </html>
