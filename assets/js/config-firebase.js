@@ -37,7 +37,7 @@ function addActiveVisitor() {
     if (!visitorID) {
       visitorID = Date.now().toString(); // ID pengunjung berdasarkan waktu saat ini
       var visitorData = {
-        timestamp: Date.now(),
+        timestamp: firebase.database.ServerValue.TIMESTAMP,
         url: currentURL
       };
 
@@ -77,16 +77,25 @@ function updateVisitorCounts() {
           this_week: 1,
           this_month: 1,
           total: 1,
-          last_updated: today
+          last_updated: firebase.database.ServerValue.TIMESTAMP
         };
       } else {
+        var today = new Date(currentData.last_updated).toISOString().slice(0, 10);
+        var yesterdayDate = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
+        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+        var yesterday = yesterdayDate.toISOString().slice(0, 10);
+        var todayObj = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
+        var thisWeekStart = new Date(todayObj.setDate(todayObj.getDate() - todayObj.getDay()));
+        thisWeekStart = thisWeekStart.toISOString().slice(0, 10);
+        var thisMonth = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 7);
+
         let updates = {
-          today: (currentData.last_updated === today) ? currentData.today + 1 : currentData.today,
-          yesterday: (currentData.last_updated === yesterday) ? currentData.yesterday : currentData.today,
-          this_week: (currentData.last_updated >= thisWeekStart) ? currentData.this_week + 1 : currentData.this_week,
-          this_month: (currentData.last_updated.slice(0, 7) === thisMonth) ? currentData.this_month + 1 : currentData.this_month,
+          today: (today === currentData.last_updated) ? currentData.today + 1 : currentData.today,
+          yesterday: (yesterday === currentData.last_updated.slice(0, 10)) ? currentData.yesterday : currentData.today,
+          this_week: (thisWeekStart === currentData.last_updated.slice(0, 10)) ? currentData.this_week + 1 : currentData.this_week,
+          this_month: (thisMonth === currentData.last_updated.slice(0, 7)) ? currentData.this_month + 1 : currentData.this_month,
           total: currentData.total + 1,
-          last_updated: today
+          last_updated: firebase.database.ServerValue.TIMESTAMP
         };
         console.log("Pembaruan: ", updates);
         return updates;
@@ -100,26 +109,6 @@ function updateVisitorCounts() {
     console.log("Mode pengembangan atau pengunjung sudah terhitung dalam sesi ini, pembaruan hitungan pengunjung dilewati.");
   }
 }
-
-// Mendapatkan tanggal hari ini dengan offset waktu Jakarta
-var today = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 10);
-console.log("Hari ini: ", today);
-
-// Mendapatkan tanggal kemarin dengan offset waktu Jakarta
-var yesterdayDate = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
-yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-var yesterday = yesterdayDate.toISOString().slice(0, 10);
-console.log("Kemarin: ", yesterday);
-
-// Mendapatkan tanggal ini minggu (dimulai dari hari Minggu) dengan offset waktu Jakarta
-var todayObj = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
-var thisWeekStart = new Date(todayObj.setDate(todayObj.getDate() - todayObj.getDay()));
-thisWeekStart = thisWeekStart.toISOString().slice(0, 10);
-console.log("Mulai Minggu Ini: ", thisWeekStart);
-
-// Mendapatkan bulan ini dengan offset waktu Jakarta
-var thisMonth = new Date(new Date().getTime() + (7 * 60 * 60 * 1000)).toISOString().slice(0, 7);
-console.log("Bulan Ini: ", thisMonth);
 
 // Memperbarui hitungan pengunjung
 updateVisitorCounts();
