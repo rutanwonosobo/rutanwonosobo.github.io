@@ -23,16 +23,55 @@ function getTodayDate() {
   return `${year}-${month}-${day}`;
 }
 
+// Fungsi untuk mendapatkan tanggal awal minggu (Senin) dalam format YYYY-MM-DD
+function getWeekStartDate() {
+  const today = new Date();
+  const dayOfWeek = today.getDay(); // 0 (Minggu) hingga 6 (Sabtu)
+  const startDate = new Date(today.setDate(today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1))); // Senin minggu ini
+  const year = startDate.getFullYear();
+  const month = String(startDate.getMonth() + 1).padStart(2, '0');
+  const day = String(startDate.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+// Fungsi untuk mendapatkan bulan ini dalam format YYYY-MM
+function getMonthStartDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  return `${year}-${month}-01`;
+}
+
 // Fungsi untuk mencatat kunjungan baru
 function recordNewVisit() {
   const todayDate = getTodayDate();
+  const weekStartDate = getWeekStartDate();
+  const monthStartDate = getMonthStartDate();
   const visitorCountsRef = database.ref('visitorCounts');
 
   visitorCountsRef.transaction(function (currentData) {
     if (currentData) {
-      currentData.today = (currentData.today || 0) + 1;
-      currentData.thisWeek = (currentData.thisWeek || 0) + 1;
-      currentData.thisMonth = (currentData.thisMonth || 0) + 1;
+      const lastVisit = currentData.lastVisit || todayDate;
+
+      // Reset data harian jika tanggal berbeda
+      if (lastVisit !== todayDate) {
+        currentData.yesterday = currentData.today || 0;
+        currentData.today = 0;
+      }
+
+      // Reset data mingguan jika awal minggu berbeda
+      if (lastVisit < weekStartDate) {
+        currentData.thisWeek = 0;
+      }
+
+      // Reset data bulanan jika awal bulan berbeda
+      if (lastVisit < monthStartDate) {
+        currentData.thisMonth = 0;
+      }
+
+      currentData.today += 1;
+      currentData.thisWeek += 1;
+      currentData.thisMonth += 1;
       currentData.total = (currentData.total || 0) + 1;
       currentData.lastVisit = todayDate;
     } else {
