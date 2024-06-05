@@ -5,21 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SAYAP TAWON - RUTAN WONOSOBO</title>
-    <meta name="description"
-        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
-    <meta name="keywords"
-        content="SAYAP TAWON, Sistem Layanan Terpadu, Rutan Wonosobo, layanan publik, transparansi, akuntabilitas">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://rutanwonosobo.vercel.app/">
-    <meta property="og:title" content="SAYAP TAWON - RUTAN WONOSOBO">
-    <meta property="og:description"
-        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
-    <meta property="og:image"
-        content="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/repo-rutanwonosobo.png">
-    <meta property="og:url" content="https://rutanwonosobo.vercel.app/">
-    <link rel="icon"
-        href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png"
-        type="image/png" sizes="any">
+    <script src="./assets/js/setupMeta.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -37,19 +23,16 @@
             </div>
         </div>
     </div>
-
     <!-- Content Section -->
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 col-12">
                 <div class="card shadow-sm mt-0 mb-4">
-
                     <!-- About Rutan Section -->
                     <div class="sejarah-rutan position-absolute top-0 start-0 m-3" data-bs-toggle="modal"
                         data-bs-target="#SejarahRutanModal">
                         <i class="bi bi-info-circle-fill rounded-circle"></i>
                     </div>
-
                     <!-- About Aplikasi Section -->
                     <div class="verified-badges position-absolute top-0 end-0 m-3" data-bs-toggle="modal"
                         data-bs-target="#AboutModal">
@@ -59,89 +42,19 @@
                         <h1 class="brand fw-bold text-uppercase mt-5">Sayap Tawon</h1>
                         <h2 class="fs-6 fw-bold text-uppercase my-4">Sistem Layanan Terpadu Rutan Wonosobo</h2>
                     </div>
-
                     <div class="card-body">
                         <!-- Clock Section -->
-                        <div id="clock" class="text-center fw-bold p-3 my-2">
-                            <div class="time" id="waktu"></div>
-                            <div class="date" id="tanggal"></div>
-                        </div>
-
+                        <div id="clockContainer"></div>
                         <!-- Info WBP Section -->
-                        <div class="info-penghuni my-2">
-                            <marquee behavior="scroll" direction="left" scrollamount="5" class="p-2 bg-body-emphasis"
-                                id="marqueeData">Loading data penghuni...</marquee>
+                        <div class="marquee-container" id="infoPenghuniContainer">
+                            <div class="marquee" id="marqueeText"></div>
                         </div>
-
                         <!-- Papan Informasi Layanan Section -->
-                        <div class="card shadow-sm">
-                            <div class="card-header text-center fw-bold bg-primary text-white">
-                                <i class="bi bi-bell-fill me-2"></i>Papan Informasi Layanan
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Kolom Pertama -->
-                                    <div class="col-md-6">
-                                        <div class="table-wrapper justify-content-center align-items-center">
-                                            <table class="table table-bordered">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th class="text-center" scope="col"><i
-                                                                class="bi bi-clock-fill me-2"></i>Jam Layanan</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-center py-4">
-                                                            <ul class="list-unstyled mb-0">
-                                                                <li class="fw-bold py-0">Senin - Kamis:</li>
-                                                                <li class="py-0">08.00 - 11.00 WIB (PAGI)</li>
-                                                                <li class="py-0">13.00 - 14.00 WIB (SIANG)</li>
-                                                                <li class="fw-bold mt-2">Jum'at & Sabtu:</li>
-                                                                <li class="py-0">08.30 - 11.00 WIB</li>
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- Kolom Kedua -->
-                                    <div class="col-md-6">
-                                        <div class="table-wrapper justify-content-center align-items-center">
-                                            <table class="table table-bordered">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th class="text-center" scope="col"><i
-                                                                class="bi bi-calendar-fill me-2"></i>Hari Kunjungan</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-center py-4">
-                                                            <ul class="list-unstyled">
-                                                                <li class="fw-bold py-0">Selasa & Kamis:</li>
-                                                                <li class="py-0">Tahanan</li>
-                                                                <li class="fw-bold mt-2">Senin & Rabu:</li>
-                                                                <li class="py-0">Narapidana</li>
-                                                                <li class="fw-bold mt-2">Jum'at & Sabtu:</li>
-                                                                <li class="py-0">Khusus Napi Narkotika</li>
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <div id="info-board"></div>
                         <!-- Layanan yang tersedia Section -->
                         <hr>
                         <h4 class="fs-5 text-center fw-bold text-uppercase my-4">Daftar Layanan</h4>
                         <div class="accordion accordion-flush" id="accordionPelayanan">
-
                             <!-- Informasi Layanan Kunjungan dan Penitipan Barang -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -156,12 +69,18 @@
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionPelayanan">
                                     <div class="accordion-body">
-                                        <p>Rutan Wonosobo menyediakan layanan kunjungan dan penitipan barang untuk
-                                            membantu Anda terhubung dengan orang terkasih yang sedang menjalani masa
-                                            penahanan. Kunjungi website resmi Rutan Wonosobo atau hubungi petugas rutan
-                                            untuk informasi lebih lengkap mengenai prosedur, jadwal kunjungan, barang
-                                            bawaan yang diperbolehkan, dan peraturan yang berlaku. Dukung orang terkasih
-                                            Anda dengan berkunjung ke Rutan Wonosobo.</p>
+                                        <p><strong>Rutan Wonosobo</strong> menyediakan layanan kunjungan dan penitipan
+                                            barang untuk membantu Anda terhubung dengan orang terkasih yang sedang
+                                            menjalani masa penahanan. Dukung orang terkasih Anda dengan berkunjung ke
+                                            <strong>Rutan Wonosobo</strong>. Untuk informasi lebih lengkap mengenai
+                                            <strong>prosedur, jadwal kunjungan, barang bawaan yang diperbolehkan, dan
+                                                peraturan yang berlaku</strong> silakan klik tombol di bawah.
+                                        </p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <a class="btn btn-primary btn-sm rounded-pill px-4" href="./layanan/"
+                                                role="button">Buka Layanan<i
+                                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -180,16 +99,25 @@
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="headingTwo" data-bs-parent="#accordionPelayanan">
                                     <div class="accordion-body">
-                                        <p>Program reintegrasi sosial adalah upaya Rutan Wonosobo untuk mengembalikan
-                                            narapidana ke tengah-tengah masyarakat melalui pembinaan. Proses ini
-                                            bertujuan untuk mengatasi kesenjangan antara individu dengan masyarakatnya,
-                                            memulihkan fungsi sosial mereka, dan membangun kembali hubungan yang
-                                            harmonis dalam masyarakat.</p>
-                                        <p>Reintegrasi sosial dapat dilakukan melalui pembebasan bersyarat, cuti
-                                            menjelang bebas, dan cuti bersyarat. Selama proses reintegrasi,
-                                            tanggungjawab pembimbingan akan diserahkan kepada pihak Balai pemasyarakatan
-                                            (BAPAS). Narapidana akan dibagi menjadi dua kategori, yaitu klien
-                                            pemasyarakatan dewasa dan klien pemasyarakatan anak.</p>
+                                        <p><strong>Program Reintegrasi Sosial</strong> adalah upaya <strong>Rutan
+                                                Wonosobo</strong> untuk mengembalikan narapidana ke tengah-tengah
+                                            masyarakat melalui pembinaan. Proses ini bertujuan untuk mengatasi
+                                            kesenjangan antara individu dengan masyarakatnya, memulihkan fungsi sosial
+                                            mereka, dan membangun kembali hubungan yang harmonis dalam masyarakat.</p>
+                                        <p><strong>Reintegrasi Sosial</strong> dapat dilakukan melalui
+                                            <strong>Pembebasan Bersyarat (PB)</strong>, <strong>Cuti Menjelang Bebas
+                                                (CMB)</strong>, dan <strong>Cuti Bersyarat (CB)</strong>. Selama proses
+                                            reintegrasi, tanggung jawab pembimbing akan diserahkan kepada pihak
+                                            <strong>Balai Pemasyarakatan (BAPAS)</strong>. Narapidana akan dibagi
+                                            menjadi dua kategori, yaitu klien pemasyarakatan dewasa dan klien
+                                            pemasyarakatan anak. Untuk mengetahui lebih lanjut tentang <strong>Program
+                                                Reintegrasi Sosial Rutan Wonosobo</strong>, klik tombol di bawah ini.
+                                        </p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <a class="btn btn-primary btn-sm rounded-pill px-4" href="./layanan/"
+                                                role="button">Buka Layanan<i
+                                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -208,16 +136,23 @@
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionPelayanan">
                                     <div class="accordion-body">
-                                        <p>Layanan kesehatan di Rutan Wonosobo bertujuan memastikan kesehatan para
-                                            tahanan terjaga dengan baik. Fasilitas kesehatan di rutan ini mencakup
-                                            pemeriksaan kesehatan rutin, layanan medis dasar, dan penanganan darurat.
-                                            Terdapat tenaga medis profesional, termasuk dokter dan perawat, yang siap
-                                            memberikan perawatan dan pengobatan kepada para tahanan yang membutuhkan.
-                                        </p>
-                                        <p>Selain itu, Rutan Wonosobo bekerja sama dengan fasilitas kesehatan eksternal
-                                            untuk kasus-kasus yang memerlukan perawatan lanjutan atau spesialis. Tujuan
-                                            utama layanan kesehatan ini adalah menjaga kondisi kesehatan para tahanan
-                                            agar tetap optimal selama masa tahanan.</p>
+                                        <p><strong>Layanan Kesehatan</strong> di <strong>Rutan Wonosobo</strong>
+                                            bertujuan memastikan kesehatan para tahanan terjaga dengan baik. Fasilitas
+                                            kesehatan di rutan ini mencakup pemeriksaan kesehatan rutin, layanan medis
+                                            dasar, dan penanganan darurat. <strong>Terdapat tenaga medis
+                                                profesional</strong>, termasuk <strong>dokter dan perawat</strong>, yang
+                                            siap memberikan perawatan dan pengobatan kepada para tahanan yang
+                                            membutuhkan.</p>
+                                        <p>Selain itu, <strong>Rutan Wonosobo</strong> bekerja sama dengan fasilitas
+                                            kesehatan eksternal untuk kasus-kasus yang memerlukan perawatan lanjutan
+                                            atau spesialis. Tujuan utama layanan kesehatan ini adalah menjaga kondisi
+                                            kesehatan para tahanan agar tetap optimal selama masa tahanan. Untuk
+                                            informasi lebih lanjut silakan klik tombol di bawah.</p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <a class="btn btn-primary btn-sm rounded-pill px-4" href="./layanan/"
+                                                role="button">Buka Layanan<i
+                                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -236,12 +171,19 @@
                                 <div id="flush-collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="headingFour" data-bs-parent="#accordionPelayanan">
                                     <div class="accordion-body">
-                                        <p>Rutan Wonosobo bekerja sama dengan Lembaga Bantuan Hukum (LBH) Unsiq untuk
-                                            memberikan bantuan hukum kepada narapidana dan tahanan, memungkinkan mereka
-                                            mendapatkan pendampingan dari ahli hukum selama proses peradilan.</p>
+                                        <p><strong>Rutan Wonosobo</strong> bekerja sama dengan <strong>Lembaga Bantuan
+                                                Hukum (LBH)</strong> untuk memberikan bantuan hukum kepada narapidana
+                                            dan tahanan, memungkinkan mereka mendapatkan pendampingan dari ahli hukum
+                                            selama proses peradilan.</p>
                                         <p>Kolaborasi ini bertujuan memastikan akses yang lebih mudah bagi penghuni
                                             rutan terhadap layanan hukum, meningkatkan keadilan dalam sistem peradilan
-                                            bagi semua warga binaan.</p>
+                                            bagi semua warga binaan. Untuk informasi lebih lanjut bisa klik tombol di
+                                            bawah ini.</p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <a class="btn btn-primary btn-sm rounded-pill px-4" href="./layanan/"
+                                                role="button">Buka Layanan<i
+                                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -258,106 +200,17 @@
                                     class="bi bi-arrow-right-circle-fill text-bg-light rounded-circle p-1 px-2 shadow-sm"></i>
                             </a>
                         </div>
-
                         <!-- Lokasi Rutan Section -->
                         <hr>
-                        <div id="locationContainer" class="d-grid my-4"></div>
-
-                        <!-- Live Visitors Count Section -->
+                        <div id="locationContainer"></div>
+                        <!-- Visitors Count Section -->
                         <hr>
-                        <div class="row">
-                            <div class="col-md-12 text-center my-2">
-                                <div class="card shadow-sm">
-                                    <div class="card-header text-center fw-bold text-bg-light">
-                                        <i class="bi bi-people-fill me-2"></i>Total Visitors
-                                    </div>
-                                    <div class="card-body p-2 m-0">
-                                        <div class="table-responsive">
-                                            <table class="table table-borderless m-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-end py-0" style="width: 50%;">Hari Ini:</td>
-                                                        <td class="text-start py-0" style="width: 50%;"><span
-                                                                id="todayCount" class="fw-bold"></span> Orang</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-end py-0">Kemarin:</td>
-                                                        <td class="text-start py-0"><span id="yesterdayCount"
-                                                                class="fw-bold"></span> Orang</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-end py-0">Minggu Ini:</td>
-                                                        <td class="text-start py-0"><span id="thisWeekCount"
-                                                                class="fw-bold"></span> Orang</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-end py-0">Bulan Ini:</td>
-                                                        <td class="text-start py-0"><span id="thisMonthCount"
-                                                                class="fw-bold"></span> Orang</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-end py-0">Total:</td>
-                                                        <td class="text-start py-0"><span id="totalCount"
-                                                                class="fw-bold"></span> Orang</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <div id="visitors"></div>
                         <!-- Hubungi Kami Section -->
                         <hr>
-                        <div class="contact-container text-center align-items-stretch">
-                            <h4 class="fs-5 fw-bold text-uppercase my-4">Hubungi Kami</h4>
-                            <div class="d-flex justify-content-center align-items-center my-2 gap-2">
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#phoneModal">
-                                        <i class="bi bi-telephone-fill mb-2"></i>
-                                        <h5 class="text-secondary mt-2">Telepon</h5>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#emailModal">
-                                        <i class="bi bi-envelope-at-fill text-danger mb-2"></i>
-                                        <h5 class="text-secondary mt-2">E-mail</h5>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm"
-                                        data-bs-toggle="modal" data-bs-target="#whatsappModal">
-                                        <i class="bi bi-whatsapp text-success mb-2"></i>
-                                        <h5 class="text-secondary mt-2">WhatsApp</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <div id="contactContainer"></div>
                         <!-- Social Media Section -->
-                        <div class="d-flex flex-wrap justify-content-center my-4" id="socialMediaButtons">
-                            <a href="#" target="_blank"
-                                class="btn text-bg-primary social-btn rounded-circle shadow-sm me-2" id="facebookBtn">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="btn text-bg-dark social-btn rounded-circle shadow-sm me-2" id="twitterBtn">
-                                <i class="bi bi-twitter-x"></i>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="btn text-bg-danger social-btn rounded-circle shadow-sm me-2" id="instagramBtn">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            <a href="#" target="_blank" class="btn text-bg-success social-btn rounded-circle shadow-sm"
-                                id="websiteBtn">
-                                <i class="bi bi-globe-asia-australia"></i>
-                            </a>
-                        </div>
-
-
+                        <div id="socialMediaButtons"></div>
                         <!-- Footer Section -->
                         <div class="copyright card-footer text-muted text-center bg-transparent">
                             <p class="m-0 p-0">Copyright © 2024 <strong>Humas Rutan Wonosobo</strong>.
@@ -368,34 +221,35 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
-        <script src="./assets/js/informasi-penghuni.js"></script>
-        <script src="./assets/js/clock.js"></script>
-        <script src="./assets/js/all.js"></script>
-        <script src="./assets/js/pengumuman.js"></script>
-        <script src="./assets/js/logo.js"></script>
-        <script src="./assets/js/modal.js"></script>
-        <script src="./assets/js/sosial-media.js"></script>
-        <script src="./assets/js/config-firebase.js"></script>
-        <script src="./assets/js/location.js"></script>
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZW152V3VP"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', 'G-2ZW152V3VP');
-        </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/informasi-penghuni.js"></script>
+    <script src="./assets/js/clock.js"></script>
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/pengumuman.js"></script>
+    <script src="./assets/js/logo.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/sosial-media.js"></script>
+    <script src="./assets/js/visitors.js"></script>
+    <script src="./assets/js/location.js"></script>
+    <script src="./assets/js/info-board.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZW152V3VP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date())
+        gtag('config', 'G-2ZW152V3VP');
+    </script>
 </body>
 
 </html>
