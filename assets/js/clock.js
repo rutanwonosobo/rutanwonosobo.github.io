@@ -1,10 +1,14 @@
+function tambahkanNol(waktu) {
+    return waktu < 10 ? '0' + waktu : waktu;
+}
+
 function updateWaktu() {
-    var sekarang = new Date();
-    var hari = sekarang.toLocaleDateString('id-ID', { weekday: 'long' });
-    var tanggal = sekarang.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-    var jam = sekarang.getHours();
-    var menit = sekarang.getMinutes();
-    var detik = sekarang.getSeconds();
+    const sekarang = new Date();
+    const hari = sekarang.toLocaleDateString('id-ID', { weekday: 'long' });
+    const tanggal = sekarang.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    let jam = sekarang.getHours();
+    let menit = sekarang.getMinutes();
+    let detik = sekarang.getSeconds();
 
     jam = tambahkanNol(jam);
     menit = tambahkanNol(menit);
@@ -14,10 +18,26 @@ function updateWaktu() {
     document.getElementById('tanggal').innerHTML = hari + ', ' + tanggal;
 }
 
-function tambahkanNol(waktu) {
-    return waktu < 10 ? '0' + waktu : waktu;
-}
+window.onload = function () {
+    // Membuat container clock dan mengatur kelasnya
+    const clockContainer = document.getElementById('clockContainer');
+    clockContainer.className = 'text-center fw-bold p-3 my-2';
+    clockContainer.id = 'clock';
 
-setInterval(updateWaktu, 1000);
+    // Membuat elemen untuk waktu dan tanggal
+    const waktuDiv = document.createElement('div');
+    waktuDiv.className = 'time';
+    waktuDiv.id = 'waktu';
 
-updateWaktu();
+    const tanggalDiv = document.createElement('div');
+    tanggalDiv.className = 'date';
+    tanggalDiv.id = 'tanggal';
+
+    // Menambahkan elemen waktu dan tanggal ke dalam container clock
+    clockContainer.appendChild(waktuDiv);
+    clockContainer.appendChild(tanggalDiv);
+
+    // Memperbarui waktu setiap detik
+    setInterval(updateWaktu, 1000);
+    updateWaktu();
+};
