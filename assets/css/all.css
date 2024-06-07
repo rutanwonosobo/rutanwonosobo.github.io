@@ -114,7 +114,7 @@ ol {
 
 .hero-section {
 	position: relative;
-	background-image: url('https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/sayap-tawon-no-icon.webp');
+	background-image: url('https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/background.webp');
 	background-size: cover;
 	background-position: center;
 	height: 20vh;
@@ -289,15 +289,6 @@ ol {
 .social-btn:hover {
 	opacity: 0.8;
 	background-color: #212529;
-}
-
-#clock .time {
-	font-size: 24px;
-}
-
-#clock .date {
-	font-size: 14px;
-	color: #666;
 }
 
 .info-penghuni {
