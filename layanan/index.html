@@ -63,6 +63,9 @@
         }
 
         .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             border: none;
             background: #f0f0f0;
             box-shadow: 6px 6px 12px #d8d8d8,
@@ -74,6 +77,10 @@
             transform: translateY(-5px);
             box-shadow: 8px 8px 16px #d8d8d8,
                 -8px -8px 16px #ffffff;
+        }
+
+        .card-footer {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -88,64 +95,17 @@
                 di Rutan Wonosobo.</small></p>
         <nav aria-label="breadcrumb" class="text-center fw-bold my-4">
             <ol class="breadcrumb bg-transparant justify-content-center">
-                <li class="breadcrumb-item"><a href="../" class="text-decoration-none"><i
-                            class="bi bi-house-fill"></i> Beranda</a></li>
+                <li class="breadcrumb-item"><a href="../" class="text-decoration-none"><i class="bi bi-house-fill"></i>
+                        Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Layanan</li>
             </ol>
         </nav>
-        <div class="row row-cols-1 row-cols-md-3 g-4 my-2 text-center">
-            <div class="col">
-                <div class="card h-100 p-4">
-                    <div class="card-header bg-transparent">
-                        <i class="bi bi-people text-primary display-3"></i>
-                        <h5 class="card-title text-uppercase fw-bold my-2">Informasi Layanan Kunjungan dan Penitipan
-                            Barang</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Deskripsi layanan 1.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0">
-                        <a href="#" class="btn btn-primary w-100 shadow-sm" target="_blank"
-                            rel="noopener noreferrer">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 p-4">
-                    <div class="card-header bg-transparent">
-                        <i class="bi bi-gear text-primary display-3"></i>
-                        <h5 class="card-title text-uppercase fw-bold my-2">Informasi Program Reintegrasi Sosial</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Deskripsi layanan 2.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0">
-                        <a href="#" class="btn btn-primary w-100 shadow-sm" target="_blank"
-                            rel="noopener noreferrer">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 p-4">
-                    <div class="card-header bg-transparent">
-                        <i class="bi bi-file-earmark text-primary display-3"></i>
-                        <h5 class="card-title text-uppercase fw-bold my-2">Informasi Layanan Kesehatan</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Deskripsi layanan 3.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0">
-                        <a href="#" class="btn btn-primary w-100 shadow-sm" target="_blank"
-                            rel="noopener noreferrer">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
+        <div id="card-container">
         </div>
 
-    </div>
-
-    <!-- Bootstrap Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/bootstrap-icons.min.js"></script>
+        <!-- Bootstrap Icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/bootstrap-icons.min.js"></script>
+        <script src="./layanan.js"></script>
 </body>
 
 </html>
