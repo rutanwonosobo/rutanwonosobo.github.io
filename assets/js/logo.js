@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var imgElement = document.createElement('img');
     imgElement.src = urlGambarBaru;
     imgElement.alt = "Logo Rutan Wonosobo";
-    imgElement.className = "profile img-fluid rounded-circle border border-2 border-dark shadow-sm";
+    imgElement.className = "profile img-fluid rounded-circle border border-4 border-white shadow";
 
     // Menambahkan elemen gambar ke dalam div dengan id "hero-section"
     var heroSection = document.getElementById('hero-section');
