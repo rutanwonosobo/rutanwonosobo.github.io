@@ -50,8 +50,28 @@ function tampilkanModal() {
     modalInstance.show();
 }
 
+// Fungsi untuk memeriksa apakah waktu saat ini sesuai dengan waktu yang ditentukan
+function waktuSesuai(tanggalTarget, waktuTarget) {
+    var sekarang = new Date();
+
+    // Pisahkan hari dan jam dari waktu target
+    var [tahun, bulan, hari] = tanggalTarget.split('-').map(Number);
+    var [jam, menit] = waktuTarget.split(':').map(Number);
+
+    // Buat objek tanggal target
+    var target = new Date(tahun, bulan - 1, hari, jam, menit);
+
+    // Periksa apakah waktu sekarang sama dengan atau sebelum waktu target
+    return sekarang.getTime() <= target.getTime();
+}
+
 // Muat saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function () {
+    // Konfigurasi untuk menampilkan modal otomatis
+    var tampilkanModalOtomatis = false; // Ubah ini ke false jika tidak ingin menampilkan modal otomatis
+    var tanggalTarget = "2024-06-08"; // Tanggal dalam format YYYY-MM-DD
+    var waktuTarget = "15:00"; // Waktu dalam format HH:MM (24 jam)
+
     // Menambahkan animasi bounce ke tombol notifikasi dengan delay jika ada isi pada pengumuman saat halaman dimuat
     var notifikasiButton = document.querySelector('.pengumuman button');
     var pengumuman = dapatkanIsiPengumuman();
@@ -90,6 +110,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }, { once: true });
         }
     });
+
+    // Menampilkan modal secara otomatis jika pengaturan true dan waktu sesuai
+    if (tampilkanModalOtomatis && waktuSesuai(tanggalTarget, waktuTarget)) {
+        setTimeout(function () {
+            if (!isModalOpen) {
+                isModalOpen = true;
+                tampilkanModal();
+
+                // Menambahkan event listener untuk mengatur flag ketika modal ditutup
+                var modalElement = document.getElementById('modalPengumuman');
+                modalElement.addEventListener('hidden.bs.modal', function () {
+                    isModalOpen = false;
+                }, { once: true });
+            }
+        }, 3000); // Delay 3 detik
+    }
 });
 
 // Fungsi untuk memperbarui badge berdasarkan konten pengumuman
