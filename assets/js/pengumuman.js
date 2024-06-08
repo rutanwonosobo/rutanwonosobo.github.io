@@ -1,142 +1,31 @@
-// Fungsi untuk mengatur konten pengumuman
-function dapatkanIsiPengumuman() {
-    // Judul pengumuman
-    var judulPengumuman = "Pengumuman";
+document.addEventListener("DOMContentLoaded", function () {
+    var today = new Date();
+    var startDate = new Date("2024-06-01"); // Ganti dengan tanggal mulai pengumuman
+    var endDate = new Date("2024-06-30"); // Ganti dengan tanggal akhir pengumuman
+    var showModal = false; // Ganti dengan true atau false untuk mengontrol tampilan modal
 
-    // URL gambar pengumuman (jika ingin menambahkan gambar)
-    var urlGambarPengumuman = "https://www.shutterstock.com/shutterstock/photos/1949944333/display_1500/stock-vector-megaphone-with-important-announcement-vector-flat-1949944333.jpg";
+    if (showModal) {
+        if (today >= startDate && today <= endDate) {
+            // Menampilkan modal setelah 3 detik
+            setTimeout(function () {
+                var pengumumanModal = new bootstrap.Modal(document.getElementById('pengumumanModal'));
 
-    // Isi pengumuman dalam format HTML
-    var htmlTambahan = `
-      <p class="font-monospace">https://rutanwonosobo.vercel.app/</p>
-    `;
+                // Isi modal
+                document.getElementById('pengumumanLabel').innerHTML = '<i class="bi bi-bell-fill"></i> Pengumuman';
 
-    // Menyiapkan variabel untuk konten pengumuman
-    var isiPengumuman = "";
+                // Isi gambar
+                var pengumumanImage = document.getElementById('pengumumanImage');
+                pengumumanImage.src = 'https://placehold.co/1200x628/005C78/F3F7EC?text=Humas+Rutan+Wonosobo';
+                pengumumanImage.style.display = 'block';
 
-    // Menambahkan gambar pengumuman jika URL tidak kosong
-    if (urlGambarPengumuman.trim() !== "") {
-        isiPengumuman += `<img src="${urlGambarPengumuman}" class="shadow-sm rounded border my-2" alt="Pengumuman" style="width: 100%; height: auto;">`;
-    }
+                // Isi teks
+                document.getElementById('pengumumanText').innerText = 'Ini adalah pesan pengumuman penting.';
 
-    // Menambahkan konten HTML tambahan jika tidak kosong
-    if (htmlTambahan.trim() !== "") {
-        isiPengumuman += htmlTambahan;
-    }
+                // Isi HTML
+                document.getElementById('pengumumanHtml').innerHTML = 'Untuk informasi lebih lanjut, kunjungi <a href="https://www.example.com" target="_blank">link ini</a>.';
 
-    return {
-        judul: judulPengumuman,
-        isi: isiPengumuman
-    };
-}
-
-// Fungsi untuk menampilkan modal ketika tombol diklik
-function tampilkanModal() {
-    var modal = document.getElementById('modalPengumuman');
-    var modalTitle = modal.querySelector('.modal-title');
-    var modalBody = modal.querySelector('.modal-body');
-
-    // Mengambil konten pengumuman
-    var pengumuman = dapatkanIsiPengumuman();
-
-    // Mengatur judul modal
-    modalTitle.innerHTML = '<i class="bi bi-bell-fill"></i> ' + pengumuman.judul;
-
-    // Menampilkan isi modal jika ada konten, atau menampilkan pesan jika tidak ada konten
-    modalBody.innerHTML = pengumuman.isi.trim() !== "" ? pengumuman.isi : "<p>Konten tidak tersedia.</p>";
-
-    // Menampilkan modal
-    var modalInstance = new bootstrap.Modal(modal);
-    modalInstance.show();
-}
-
-// Fungsi untuk memeriksa apakah waktu saat ini sesuai dengan waktu yang ditentukan
-function waktuSesuai(tanggalTarget, waktuTarget) {
-    var sekarang = new Date();
-
-    // Pisahkan hari dan jam dari waktu target
-    var [tahun, bulan, hari] = tanggalTarget.split('-').map(Number);
-    var [jam, menit] = waktuTarget.split(':').map(Number);
-
-    // Buat objek tanggal target
-    var target = new Date(tahun, bulan - 1, hari, jam, menit);
-
-    // Periksa apakah waktu sekarang sama dengan atau sebelum waktu target
-    return sekarang.getTime() <= target.getTime();
-}
-
-// Muat saat halaman dimuat
-document.addEventListener('DOMContentLoaded', function () {
-    // Konfigurasi untuk menampilkan modal otomatis
-    var tampilkanModalOtomatis = false; // Ubah ini ke false jika tidak ingin menampilkan modal otomatis
-    var tanggalTarget = "2024-06-08"; // Tanggal dalam format YYYY-MM-DD
-    var waktuTarget = "15:00"; // Waktu dalam format HH:MM (24 jam)
-
-    // Menambahkan animasi bounce ke tombol notifikasi dengan delay jika ada isi pada pengumuman saat halaman dimuat
-    var notifikasiButton = document.querySelector('.pengumuman button');
-    var pengumuman = dapatkanIsiPengumuman();
-    if (pengumuman.isi.trim() !== "") {
-        notifikasiButton.classList.add('animate__animated', 'animate__bounce', 'animate__delay-1s', 'animate__slower', 'animate__repeat-3');
-    }
-
-    // Menghentikan animasi saat kursor mengarah ke tombol notifikasi
-    notifikasiButton.addEventListener('mouseenter', function () {
-        notifikasiButton.classList.remove('animate__bounce');
-    });
-
-    // Mengembalikan animasi setelah beberapa detik saat kursor meninggalkan tombol notifikasi
-    notifikasiButton.addEventListener('mouseleave', function () {
-        var pengumuman = dapatkanIsiPengumuman();
-        if (pengumuman.isi.trim() !== "") {
-            notifikasiButton.classList.add('animate__bounce');
+                pengumumanModal.show();
+            }, 3000); // 3000 milidetik = 3 detik
         }
-    });
-
-    // Memperbarui badge pengumuman saat halaman dimuat
-    perbaruiBadgePengumuman();
-
-    // Event listener untuk tombol notifikasi
-    var isModalOpen = false;
-    notifikasiButton.addEventListener('click', function () {
-        // Cek apakah modal sedang terbuka
-        if (!isModalOpen) {
-            isModalOpen = true;
-            tampilkanModal();
-
-            // Menambahkan event listener untuk mengatur flag ketika modal ditutup
-            var modalElement = document.getElementById('modalPengumuman');
-            modalElement.addEventListener('hidden.bs.modal', function () {
-                isModalOpen = false;
-            }, { once: true });
-        }
-    });
-
-    // Menampilkan modal secara otomatis jika pengaturan true dan waktu sesuai
-    if (tampilkanModalOtomatis && waktuSesuai(tanggalTarget, waktuTarget)) {
-        setTimeout(function () {
-            if (!isModalOpen) {
-                isModalOpen = true;
-                tampilkanModal();
-
-                // Menambahkan event listener untuk mengatur flag ketika modal ditutup
-                var modalElement = document.getElementById('modalPengumuman');
-                modalElement.addEventListener('hidden.bs.modal', function () {
-                    isModalOpen = false;
-                }, { once: true });
-            }
-        }, 3000); // Delay 3 detik
     }
 });
-
-// Fungsi untuk memperbarui badge berdasarkan konten pengumuman
-function perbaruiBadgePengumuman() {
-    var badge = document.getElementById('badgePengumuman');
-    var pengumuman = dapatkanIsiPengumuman();
-
-    // Menampilkan atau menyembunyikan badge berdasarkan konten pengumuman
-    if (pengumuman.isi.trim() !== "") {
-        badge.classList.remove('d-none');
-    } else {
-        badge.classList.add('d-none');
-    }
-};
