@@ -153,10 +153,6 @@ ol {
 	color: #0d6efd;
 }
 
-#badgePengumuman {
-	padding: 2px;
-}
-
 .brand {
 	letter-spacing: 0.2rem;
 }
@@ -223,7 +219,7 @@ ol {
 }
 
 .accordion-collapse {
-	transition: max-height 0.5s ease;
+	transition: max-height 0.3s ease;
 }
 
 .accordion-body p {
@@ -236,7 +232,7 @@ ol {
 	border-radius: 5px;
 	background-color: #ffffff;
 	opacity: 0;
-	transition: opacity 0.5s ease, transform 0.5s ease;
+	transition: opacity 0.3s ease, transform 0.3s ease;
 	transform: translateY(-10px);
 	font-size: 0.9rem;
 	padding: 0;
@@ -313,32 +309,6 @@ ol {
 	align-items: center;
 }
 
-.pengumuman {
-	position: fixed;
-	bottom: 2%;
-	left: 2%;
-	z-index: 9999;
-}
-
-.pengumuman .btn i {
-	font-size: 20px;
-}
-
-.instagram-media {
-	text-align: center;
-	background: #ffffff;
-	border: 0;
-	border-radius: 3px;
-	box-shadow: 0 0 1px 0 rgba(0, 0, 0, .5), 0 1px 10px 0 rgba(0, 0, 0, .15);
-	margin: 1px;
-	max-width: 540px;
-	min-width: 326px;
-	padding: 0;
-	width: 99.375%;
-	width: -webkit-calc(100% - 2px);
-	width: calc(100% - 2px)
-}
-
 .copyright {
 	font-size: 12px;
 }
@@ -367,24 +337,5 @@ ol {
 	.hero-section {
 		border-radius: 0 0 5px 5px;
 		margin: 0 5px;
-	}
-}
-
-@keyframes bounce {
-
-	0%,
-	20%,
-	50%,
-	80%,
-	100% {
-		transform: translateY(0);
-	}
-
-	40% {
-		transform: translateY(-15px);
-	}
-
-	60% {
-		transform: translateY(-10px);
 	}
 }
