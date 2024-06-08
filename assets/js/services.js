@@ -47,7 +47,7 @@ layananData.forEach((layanan, index) => {
                 ${layanan.title}
             </button>
         </h2>
-        <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#accordionPelayanan">
+        <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}">
             <div class="accordion-body">
                 ${layanan.content}
                 <div class="d-flex justify-content-center align-items-center mt-3">
