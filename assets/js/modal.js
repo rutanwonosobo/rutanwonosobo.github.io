@@ -175,36 +175,24 @@ var whatsappModal = `
 document.write(whatsappModal);
 
 // Pengaturan Modal Pengumuman
-var modalPengumuman = `
-<div class="modal fade" id="modalPengumuman" tabindex="-1" aria-labelledby="modalPengumumanLabel"
-aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content text-center">
-        <div class="modal-header">
-            <h5 class="fs-6 modal-title text-uppercase fw-bold" id="modalPengumumanLabel">Pengumuman</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <!-- Isi Pengumuman -->
+var pengumumanModal = `
+<div class="modal fade" id="pengumumanModal" tabindex="-1" aria-labelledby="pengumumanLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="fs-6 modal-title text-uppercase fw-bold" id="pengumumanLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="pengumumanBody">
+                <div class="d-flex justify-content-center">
+                    <img id="pengumumanImage" class="img-fluid rounded shadow-sm" alt="Gambar Pengumuman">
+                </div>
+                <p id="pengumumanText"></p>
+                <div id="pengumumanHtml"></div>
+            </div>
         </div>
     </div>
 </div>
-</div>
 `;
 
-document.write(modalPengumuman);
-
-// Pengaturan Tombol Pengumuman
-var badgePengumuman = `
-<div class="pengumuman sticky-bottom d-block d-lg-none text-center">
-<button type="button" class="btn btn-primary position-relative rounded-circle">
-    <i class="bi bi-bell-fill"></i>
-    <span class="position-absolute top-0 end-0 translate-middle-y badge shadow-sm rounded-circle bg-light p-0"
-        id="badgePengumuman">
-        <i class="bi bi-1-circle-fill text-danger shadow-sm fs-6"></i>
-    </span>
-</button>
-</div>
-`;
-
-document.write(badgePengumuman);
+document.write(pengumumanModal);
