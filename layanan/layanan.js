@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const cardContainer = document.getElementById('card-container');
-    cardContainer.className = 'row row-cols-1 row-cols-md-3 g-4 my-2 text-center';
+    cardContainer.className = 'row row-cols-1 row-cols-md-3 g-4 my-5 text-center';
 
     cardsData.forEach(card => {
         const colDiv = document.createElement('div');
