@@ -51,7 +51,7 @@ layananData.forEach((layanan, index) => {
             <div class="accordion-body">
                 ${layanan.content}
                 <div class="d-flex justify-content-center align-items-center mt-3">
-                    <a class="btn btn-primary btn-sm rounded-pill px-4" href="${layanan.link}" role="button">Buka Layanan<i class="bi bi-chevron-double-right ms-2"></i></a>
+                    <a class="btn btn-primary btn-sm rounded-pill px-4" href="${layanan.link}" role="button">Buka Layanan</a>
                 </div>
             </div>
         </div>
