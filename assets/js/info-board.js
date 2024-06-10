@@ -39,11 +39,13 @@ function createColumn(parent, iconClass, headerText, rows) {
     const table = createElement('table', { class: 'table table-bordered' }, tableWrapper);
 
     const thead = createElement('thead', { class: 'table-light' }, table);
+    thead.style.cursor = 'pointer'; // Mengatur cursor pointer pada thead
     const trHead = createElement('tr', {}, thead);
     const thHead = createElement('th', { class: 'text-center', scope: 'col' }, trHead);
     thHead.innerHTML = `<i class="bi ${iconClass} me-2"></i>${headerText}`;
 
     const tbody = createElement('tbody', {}, table);
+    tbody.classList.add('collapse'); // Menambahkan kelas collapse secara default
     const trBody = createElement('tr', {}, tbody);
     const tdBody = createElement('td', { class: 'text-center py-4' }, trBody);
     const ul = createElement('ul', { class: 'list-unstyled mb-0' }, tdBody);
@@ -56,5 +58,10 @@ function createColumn(parent, iconClass, headerText, rows) {
             liItem.textContent = item;
         });
         createElement('li', { class: 'fw-bold mt-2' }, ul);
+    });
+
+    // Tambahkan event listener untuk collapse/expand thead
+    thead.addEventListener('click', function () {
+        tbody.classList.toggle('collapse');
     });
 }
