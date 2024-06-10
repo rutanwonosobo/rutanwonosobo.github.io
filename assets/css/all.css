@@ -12,6 +12,7 @@
 html {
 	box-sizing: border-box;
 	overflow-x: hidden;
+	height: 100%;
 }
 
 html::-webkit-scrollbar,
@@ -23,14 +24,11 @@ body::-webkit-scrollbar {
 body {
 	font-family: 'Poppins', Arial, sans-serif;
 	background-color: #f8f9fa;
-	height: 100vh;
-	width: 100%;
-	color: #403b3b;
-	overflow-x: hidden;
-	overflow-y: auto;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	line-height: 1.6;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 h1,
@@ -260,6 +258,33 @@ ol {
 	border: 0;
 }
 
+.testimonial-img {
+	width: 125px;
+	height: 125px;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.carousel-item {
+	background-color: transparent;
+}
+
+.carousel-item:hover {
+	cursor: pointer;
+}
+
+.carousel-indicators button {
+	background-color: #5A72A0 !important;
+	border: none;
+	margin: 0 5px !important;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .active {
+	background-color: #1A2130 !important;
+	transform: scale(1.2);
+}
+
 .social-btn {
 	font-size: 1.5em;
 	width: 40px;
@@ -285,6 +310,11 @@ ol {
 .social-btn:hover {
 	opacity: 0.8;
 	background-color: #212529;
+}
+
+#menu-links,
+#menu-links a {
+	font-size: 12px;
 }
 
 .info-penghuni {
