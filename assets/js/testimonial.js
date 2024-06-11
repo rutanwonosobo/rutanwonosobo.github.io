@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     testimonials.forEach((testimonial, index) => {
         const item = document.createElement('div');
-        item.classList.add('carousel-item', 'text-center', 'p-4', 'rounded');
+        item.classList.add('carousel-item', 'text-center', 'rounded');
         if (index === 0) item.classList.add('active');
 
         const img = document.createElement('img');
