@@ -116,6 +116,20 @@ a:hover {
     .breadcrumb-button {
         font-size: 12px;
     }
+
+    .instagram-media {
+        width: 100%;
+    }
+
+    .card {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 576px) {
