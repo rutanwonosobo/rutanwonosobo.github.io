@@ -102,6 +102,7 @@ a:hover {
     border: none;
 }
 
+.card-body p,
 .card-text {
     text-justify: inter-word;
     text-align: justify;
