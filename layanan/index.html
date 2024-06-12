@@ -1,77 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>LAYANAN - SAYAP TAWON</title>
+        <meta name="description" content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
+        <meta name="keywords" content="SAYAP TAWON, Sistem Layanan Terpadu, Rutan Wonosobo, layanan publik, transparansi, akuntabilitas">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://rutanwonosobo.vercel.app/">
+        <meta property="og:title" content="LAYANAN - SAYAP TAWON">
+        <meta property="og:description" content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
+        <meta property="og:image" content="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/repo-rutanwonosobo.png">
+        <meta property="og:url" content="https://rutanwonosobo.vercel.app/">
+        <link rel="icon" href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png" type="image/png" sizes="any">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./layanan.css" rel="stylesheet">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <style>
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: none;
+                background: #f0f0f0;
+                box-shadow: 6px 6px 12px #d8d8d8,
+                    -6px -6px 12px #ffffff;
+                transition: all 0.3s ease;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LAYANAN - SAYAP TAWON</title>
-    <meta name="description"
-        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
-    <meta name="keywords"
-        content="SAYAP TAWON, Sistem Layanan Terpadu, Rutan Wonosobo, layanan publik, transparansi, akuntabilitas">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://rutanwonosobo.vercel.app/">
-    <meta property="og:title" content="LAYANAN - SAYAP TAWON">
-    <meta property="og:description"
-        content="Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.">
-    <meta property="og:image"
-        content="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/repo-rutanwonosobo.png">
-    <meta property="og:url" content="https://rutanwonosobo.vercel.app/">
-    <link rel="icon"
-        href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png"
-        type="image/png" sizes="any">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./layanan.css" rel="stylesheet">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <style>
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: none;
-            background: #f0f0f0;
-            box-shadow: 6px 6px 12px #d8d8d8,
-                -6px -6px 12px #ffffff;
-            transition: all 0.3s ease;
-        }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 8px 8px 16px #d8d8d8,
+                    -8px -8px 16px #ffffff;
+            }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 8px 8px 16px #d8d8d8,
-                -8px -8px 16px #ffffff;
-        }
-
-        .card-footer {
-            margin-top: auto;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container my-5">
-        <h1 class="display-2 text-primary text-center text-uppercase fw-bold my-2">LAYANAN</h1>
-        <p class="text-center font-monospace my-2">Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang
-            mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini
-            bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan
-            kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik
-            di Rutan Wonosobo.</p>
-        <nav aria-label="breadcrumb" class="text-center fw-bold my-4">
-            <ol class="breadcrumb bg-transparant justify-content-center">
-                <li class="breadcrumb-item"><a href="../" class="breadcrumb-button rounded-circle py-3 mx-2 my-1"><i
-                            class="bi bi-house-fill"></i></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="./"
-                        class="breadcrumb-button rounded-pill">Layanan</a></li>
-            </ol>
-        </nav>
-        <div id="card-container"></div>
-    </div>
-
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script src="./layanan.js"></script>
-    <script src="../assets/js/pages.js"></script>
-</body>
-
+            .card-footer {
+                margin-top: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid my-4">
+            <h1 class="display-2 text-primary text-center text-uppercase fw-bold my-2">LAYANAN</h1>
+            <p class="text-center font-monospace my-2">Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.</p>
+            <nav aria-label="breadcrumb" class="text-center fw-bold my-4">
+                <ol class="breadcrumb bg-transparent justify-content-center d-flex flex-wrap">
+                    <li class="breadcrumb-item">
+                        <a href="../" class="breadcrumb-button rounded-circle py-3 mx-2 my-1">
+                            <i class="bi bi-house-fill"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="./" class="breadcrumb-button rounded-pill">Layanan</a>
+                    </li>
+                </ol>
+            </nav>
+            <div id="card-container"></div>
+        </div>
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <script src="./layanan.js"></script>
+        <script src="../assets/js/pages.js"></script>
+        <script src="../assets/js/footer.js"></script>
+    </body>
 </html>
