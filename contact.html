@@ -1,115 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>CONTACT - SAYAP TAWON</title>
+        <link rel="icon" href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png" type="image/png" sizes="any">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <link href="./assets/css/pages.css" rel="stylesheet">
+    </head>
+    <style>
+        .contact-card {
+            background-color: #f0f0f0;
+            box-shadow: 5px 5px 15px #c9c9c9,
+                -5px -5px 15px #ffffff;
+        }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CONTACT - SAYAP TAWON</title>
-    <link rel="icon"
-        href="https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/logorutanwonosobo.png"
-        type="image/png" sizes="any">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link href="./assets/css/pages.css" rel="stylesheet">
-</head>
-<style>
-    .contact-card {
-        background-color: #f0f0f0;
-        box-shadow: 5px 5px 15px #c9c9c9,
-            -5px -5px 15px #ffffff;
-    }
+        .form-control {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            box-shadow: inset 2px 2px 5px #bcbcbc,
+                inset -2px -2px 5px #ffffff;
+        }
 
-    .form-control {
-        padding: 10px;
-        margin-bottom: 20px;
-        border: none;
-        outline: none;
-        box-shadow: inset 2px 2px 5px #bcbcbc,
-            inset -2px -2px 5px #ffffff;
-    }
+        .form-control:focus {
+            box-shadow: inset 2px 2px 5px #bcbcbc,
+                inset -2px -2px 5px #ffffff;
+        }
 
-    .form-control:focus {
-        box-shadow: inset 2px 2px 5px #bcbcbc,
-            inset -2px -2px 5px #ffffff;
-    }
+        ::placeholder {
+            opacity: 0.5 !important;
+        }
 
-    ::placeholder {
-        opacity: 0.5 !important;
-    }
+        textarea {
+            resize: none;
+        }
 
-    textarea {
-        resize: none;
-    }
+        .sendWhatsApp:hover {
+            background-color: #006769 !important;
+        }
 
-    .sendWhatsApp:hover {
-        background-color: #006769 !important;
-    }
+        .error-message {
+            font-size: 14px;
+        }
 
-    .error-message {
-        font-size: 14px;
-    }
+        .success-message {
+            color: #008000;
+            font-size: 12px;
+            margin-top: 10px;
+        }
 
-    .success-message {
-        color: #008000;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-
-    .g-recaptcha {
-        margin: 0 auto;
-    }
-</style>
-
-<body>
-    <div class="container my-5">
-        <h1 class="display-4 text-primary text-center text-uppercase fw-bold my-2">CONTACT</h1>
-        <div class="d-flex flex-wrap fw-bold justify-content-center align-items-center my-4">
-            <a href="./" class="menu-button rounded-circle mx-2 my-1"><i class="bi bi-house-fill"></i></a>
-            <a href="./about.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">About</a>
-            <a href="./contact.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Contact</a>
-            <a href="./disclaimer.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Disclaimer</a>
-            <a href="./privacy.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Privacy Policy</a>
-            <a href="./terms.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Terms and Conditions</a>
-        </div>
-
-        <div class="container my-5">
-            <div class="row justify-content-center">
+        .g-recaptcha {
+            margin: 0 auto;
+        }
+    </style>
+    <body>
+        <div class="container my-4">
+            <h1 class="display-4 text-primary text-center text-uppercase fw-bold my-2">CONTACT</h1>
+            <div class="d-flex flex-wrap fw-bold justify-content-center align-items-center my-4">
+                <a href="./" class="menu-button rounded-circle mx-2 my-1">
+                    <i class="bi bi-house-fill"></i>
+                </a>
+                <a href="./about.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">About</a>
+                <a href="./contact.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Contact</a>
+                <a href="./disclaimer.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Disclaimer</a>
+                <a href="./privacy.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Privacy Policy</a>
+                <a href="./terms.html" class="menu-button rounded-pill mx-2 my-1 px-4 py-1">Terms and Conditions</a>
+            </div>
+            <div class="row justify-content-center mt-5">
                 <div class="col-lg-8 col-md-10 col-12">
-                    <div class="card contact-card">
+                    <div class="card contact-card mx-auto">
                         <div class="card-body">
                             <form autocomplete="off" id="contact-form">
                                 <div class="mb-3">
-                                    <label for="name" class="form-label fw-bold"><i
-                                            class="bi bi-person-fill me-2"></i>Nama Lengkap</label>
+                                    <label for="name" class="form-label fw-bold">
+                                        <i class="bi bi-person-fill me-2"></i>Nama Lengkap </label>
                                     <div class="error-message text-danger mb-2" id="name-error"></div>
-                                    <input type="text" class="form-control rounded" id="name" name="name"
-                                        placeholder="Masukkan Nama Anda" required autocomplete="off">
+                                    <input type="text" class="form-control rounded" id="name" name="name" placeholder="Masukkan Nama Anda" required autocomplete="off">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold"><i
-                                            class="bi bi-envelope-at-fill me-2"></i>Email</label>
+                                    <label for="email" class="form-label fw-bold">
+                                        <i class="bi bi-envelope-at-fill me-2"></i>Email </label>
                                     <div class="error-message text-danger mb-2" id="email-error"></div>
-                                    <input type="email" class="form-control rounded" id="email" name="email"
-                                        placeholder="Masukkan Email Anda" required>
+                                    <input type="email" class="form-control rounded" id="email" name="email" placeholder="Masukkan Email Anda" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message" class="form-label fw-bold"><i
-                                            class="bi bi-chat-fill me-2"></i>Pesan</label>
+                                    <label for="message" class="form-label fw-bold">
+                                        <i class="bi bi-chat-fill me-2"></i>Pesan </label>
                                     <div class="error-message text-danger mb-2" id="message-error"></div>
-                                    <textarea class="form-control rounded" id="message" name="message" rows="5"
-                                        placeholder="Masukkan Pesan Anda" required></textarea>
+                                    <textarea class="form-control rounded" id="message" name="message" rows="5" placeholder="Masukkan Pesan Anda" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <center>
-                                        <div class="g-recaptcha"
-                                            data-sitekey="6LeinvUpAAAAAKWeb2VoFZB1BJI9HKHCqs36sYFf"></div>
+                                        <div class="g-recaptcha" data-sitekey="6LeinvUpAAAAAKWeb2VoFZB1BJI9HKHCqs36sYFf"></div>
                                     </center>
                                     <div id="recaptcha-error" class="error-message text-center text-danger my-2"></div>
                                 </div>
-
-                                <button type="button"
-                                    class="btn btn-primary btn-block sendWhatsApp fw-bold w-100 rounded-pill shadow"
-                                    onclick="sendWhatsApp()">Kirim Pesan <i class="bi bi-send-fill ms-2"></i></button>
+                                <button type="button" class="btn btn-primary btn-block sendWhatsApp fw-bold w-100 rounded-pill shadow" onclick="sendWhatsApp()">Kirim Pesan <i class="bi bi-send-fill ms-2"></i>
+                                </button>
                                 <div class="success-message text-center" id="success-message"></div>
                             </form>
                         </div>
@@ -117,84 +107,69 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/pages.js"></script>
-
-    <script>
-        function sendWhatsApp() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-            var isValid = true;
-
-            // Validasi nama
-            if (name === '') {
-                document.getElementById('name-error').innerHTML = 'Nama harus diisi!';
-                isValid = false;
-            } else {
-                document.getElementById('name-error').innerHTML = '';
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <script src="./assets/js/pages.js"></script>
+        <script>
+            function sendWhatsApp() {
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+                var isValid = true;
+                // Validasi nama
+                if (name === '') {
+                    document.getElementById('name-error').innerHTML = 'Nama harus diisi!';
+                    isValid = false;
+                } else {
+                    document.getElementById('name-error').innerHTML = '';
+                }
+                // Validasi email
+                if (email === '') {
+                    document.getElementById('email-error').innerHTML = 'Email harus diisi!';
+                    isValid = false;
+                } else {
+                    document.getElementById('email-error').innerHTML = '';
+                }
+                // Validasi pesan
+                if (message === '') {
+                    document.getElementById('message-error').innerHTML = 'Pesan harus diisi!';
+                    isValid = false;
+                } else {
+                    document.getElementById('message-error').innerHTML = '';
+                }
+                // Validasi reCAPTCHA
+                var recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    document.getElementById('recaptcha-error').innerHTML = 'Silakan centang kotak reCAPTCHA!';
+                    isValid = false;
+                } else {
+                    document.getElementById('recaptcha-error').innerHTML = '';
+                }
+                // Jika ada pesan error, hilangkan setelah 3 detik
+                if (!isValid) {
+                    setTimeout(function() {
+                        document.querySelectorAll('.error-message').forEach(function(element) {
+                            element.innerHTML = '';
+                        });
+                    }, 3000);
+                }
+                // Jika semua input valid, kirim pesan
+                if (isValid) {
+                    // Mengosongkan form setelah dikirim
+                    document.getElementById('contact-form').reset();
+                    // Menampilkan notifikasi sukses
+                    document.getElementById('success-message').innerHTML = 'Pesan telah berhasil dikirim! Anda akan diarahkan ke WhatsApp.';
+                    // Menghilangkan notifikasi sukses setelah 3 detik
+                    setTimeout(function() {
+                        document.getElementById('success-message').innerHTML = '';
+                    }, 3000);
+                    // Menunda pengiriman pesan selama 3 detik
+                    setTimeout(function() {
+                        // Kirim pesan WhatsApp atau proses pengiriman lainnya
+                        var waLink = "https://api.whatsapp.com/send?phone=6289510725657&text=Halo,%20saya%20" + name + "%20ingin%20mengirim%20pesan%20sebagai%20berikut:%0A%0A" + message;
+                        window.open(waLink);
+                    }, 3000);
+                }
             }
-
-            // Validasi email
-            if (email === '') {
-                document.getElementById('email-error').innerHTML = 'Email harus diisi!';
-                isValid = false;
-            } else {
-                document.getElementById('email-error').innerHTML = '';
-            }
-
-            // Validasi pesan
-            if (message === '') {
-                document.getElementById('message-error').innerHTML = 'Pesan harus diisi!';
-                isValid = false;
-            } else {
-                document.getElementById('message-error').innerHTML = '';
-            }
-
-            // Validasi reCAPTCHA
-            var recaptchaResponse = grecaptcha.getResponse();
-            if (recaptchaResponse.length === 0) {
-                document.getElementById('recaptcha-error').innerHTML = 'Silakan centang kotak reCAPTCHA!';
-                isValid = false;
-            } else {
-                document.getElementById('recaptcha-error').innerHTML = '';
-            }
-
-            // Jika ada pesan error, hilangkan setelah 3 detik
-            if (!isValid) {
-                setTimeout(function () {
-                    document.querySelectorAll('.error-message').forEach(function (element) {
-                        element.innerHTML = '';
-                    });
-                }, 3000);
-            }
-
-            // Jika semua input valid, kirim pesan
-            if (isValid) {
-                // Mengosongkan form setelah dikirim
-                document.getElementById('contact-form').reset();
-
-                // Menampilkan notifikasi sukses
-                document.getElementById('success-message').innerHTML = 'Pesan telah berhasil dikirim! Anda akan diarahkan ke WhatsApp.';
-
-                // Menghilangkan notifikasi sukses setelah 3 detik
-                setTimeout(function () {
-                    document.getElementById('success-message').innerHTML = '';
-                }, 3000);
-
-                // Menunda pengiriman pesan selama 3 detik
-                setTimeout(function () {
-                    // Kirim pesan WhatsApp atau proses pengiriman lainnya
-                    var waLink = "https://api.whatsapp.com/send?phone=6289510725657&text=Halo,%20saya%20" + name + "%20ingin%20mengirim%20pesan%20sebagai%20berikut:%0A%0A" + message;
-                    window.open(waLink);
-                }, 3000);
-            }
-        }
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
