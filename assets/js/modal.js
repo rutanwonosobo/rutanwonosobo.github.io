@@ -178,7 +178,7 @@ document.write(whatsappModal);
 var pengumumanModal = `
 <div class="modal fade" id="pengumumanModal" tabindex="-1" aria-labelledby="pengumumanLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content text-bg-dark">
             <div class="modal-header">
             <h5 class="fs-6 modal-title text-uppercase fw-bold" id="pengumumanLabel"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -188,7 +188,7 @@ var pengumumanModal = `
                     <img id="pengumumanImage" class="img-fluid rounded shadow-sm" alt="Gambar Pengumuman">
                 </div>
                 <p id="pengumumanText"></p>
-                <div id="pengumumanHtml"></div>
+                <div id="pengumumanHtml" class="text-center"></div>
             </div>
         </div>
     </div>
