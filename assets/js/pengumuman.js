@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var today = new Date();
     var startDate = new Date("2024-06-15"); // Ganti dengan tanggal mulai pengumuman
     var endDate = new Date("2024-06-30"); // Ganti dengan tanggal akhir pengumuman
-    var showModal = true; // Ganti dengan true atau false untuk mengontrol tampilan modal
+    var showModal = false; // Ganti dengan true atau false untuk mengontrol tampilan modal
 
     if (showModal) {
         if (today >= startDate && today <= endDate) {
