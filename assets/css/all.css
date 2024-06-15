@@ -31,11 +31,6 @@ body {
 	overflow-x: hidden;
 }
 
-body.modal-open {
-	overflow: hidden;
-	padding-right: 0 !important;
-}
-
 h1,
 h2,
 h3,
