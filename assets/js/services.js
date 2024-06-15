@@ -29,6 +29,7 @@ const container = document.getElementById('accordionPelayananContainer');
 const heading = document.createElement('h4');
 heading.className = 'fs-5 text-center fw-bold text-uppercase my-4';
 heading.innerText = 'Daftar Layanan';
+heading.setAttribute('data-aos', 'fade-up');
 container.appendChild(heading);
 
 const accordionContainer = document.createElement('div');
@@ -40,6 +41,7 @@ layananData.forEach((layanan, index) => {
     const accordionItem = document.createElement('div');
     accordionItem.className = 'accordion-item';
     accordionItem.setAttribute('data-aos', 'fade-right');
+    accordionItem.setAttribute('data-aos-delay', '300');
 
     accordionItem.innerHTML = `
         <h2 class="accordion-header" id="heading${index}">
