@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const infoBoard = document.getElementById('info-board');
 
-    const card = createElement('div', { class: 'card shadow-sm' }, infoBoard);
+    const card = createElement('div', { class: 'card shadow-sm', 'data-aos': 'fade-up', 'data-aos-delay': '1200' }, infoBoard);
     const cardHeader = createElement('div', { class: 'card-header text-center fw-bold bg-primary text-white' }, card);
     cardHeader.innerHTML = '<i class="bi bi-bell-fill me-2"></i>Papan Informasi Layanan';
 

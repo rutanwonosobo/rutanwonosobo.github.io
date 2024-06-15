@@ -1,5 +1,4 @@
-// Fungsi untuk membuat dan mengatur elemen kontak
-function createContactBox(id, iconClass, text, targetModal) {
+function createContactBox(id, iconClass, text, targetModal, delay) {
     const colDiv = document.createElement('div');
     colDiv.className = 'col-4';
 
@@ -7,6 +6,10 @@ function createContactBox(id, iconClass, text, targetModal) {
     contactBox.className = 'contact-box w-100 p-3 border border-1 border-secondary-subtle rounded shadow-sm';
     contactBox.setAttribute('data-bs-toggle', 'modal');
     contactBox.setAttribute('data-bs-target', targetModal);
+
+    // Tambahkan atribut data-aos dan data-aos-delay
+    contactBox.setAttribute('data-aos', 'fade-up');
+    contactBox.setAttribute('data-aos-delay', delay);
 
     const icon = document.createElement('i');
     icon.className = `${iconClass} mb-2`;
@@ -35,9 +38,10 @@ function setContactUsSection() {
     const contactRow = document.createElement('div');
     contactRow.className = 'd-flex justify-content-center align-items-center my-2 gap-2';
 
-    contactRow.appendChild(createContactBox('phoneBox', 'bi bi-telephone-fill', 'Telepon', '#phoneModal'));
-    contactRow.appendChild(createContactBox('emailBox', 'bi bi-envelope-at-fill text-danger', 'E-mail', '#emailModal'));
-    contactRow.appendChild(createContactBox('whatsappBox', 'bi bi-whatsapp text-success', 'WhatsApp', '#whatsappModal'));
+    // Tambahkan contactBox dengan delay yang berbeda
+    contactRow.appendChild(createContactBox('phoneBox', 'bi bi-telephone-fill', 'Telepon', '#phoneModal', '300'));
+    contactRow.appendChild(createContactBox('emailBox', 'bi bi-envelope-at-fill text-danger', 'E-mail', '#emailModal', '600'));
+    contactRow.appendChild(createContactBox('whatsappBox', 'bi bi-whatsapp text-success', 'WhatsApp', '#whatsappModal', '900'));
 
     container.appendChild(contactRow);
 }

@@ -14,13 +14,13 @@ function aturDataMarquee() {
     var marquee = document.getElementById('marqueeData');
 
     // Data yang ingin diatur
-    var totalWBP = 144;
-    var jumlahTahanan = 62;
-    var lakiLakiTahanan = 60;
-    var perempuanTahanan = 2;
-    var jumlahNarapidana = 82;
-    var lakiLakiNarapidana = 80;
-    var perempuanNarapidana = 2;
+    var totalWBP = 147;
+    var jumlahTahanan = 54;
+    var lakiLakiTahanan = 53;
+    var perempuanTahanan = 1;
+    var jumlahNarapidana = 93;
+    var lakiLakiNarapidana = 90;
+    var perempuanNarapidana = 3;
 
     // Format teks baru untuk dimasukkan ke dalam marquee
     var newText = `Jumlah Total Warga Binaan Pemasyarakatan ${totalWBP} Orang dengan rincian ${jumlahTahanan} Orang Tahanan (${lakiLakiTahanan} Laki-Laki, ${perempuanTahanan} Perempuan) dan ${jumlahNarapidana} Orang Narapidana (${lakiLakiNarapidana} Laki-Laki, ${perempuanNarapidana} Perempuan).`;

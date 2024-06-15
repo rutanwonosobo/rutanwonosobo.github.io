@@ -175,4 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tdValue.appendChild(document.createTextNode(' Orang'));
     tr.appendChild(tdValue);
   });
+
+  card.setAttribute('data-aos', 'fade-up');
 });

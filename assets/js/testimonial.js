@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
+    carouselInner.setAttribute('data-aos', 'fade-up');
 
     const indicators = document.createElement('div');
     indicators.classList.add('carousel-indicators', 'mt-4');

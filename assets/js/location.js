@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleButton.setAttribute('data-bs-target', '#collapseLocation');
     toggleButton.setAttribute('aria-expanded', 'false');
     toggleButton.setAttribute('aria-controls', 'collapseLocation');
+    toggleButton.setAttribute('data-aos', 'fade-up');
     toggleButton.innerHTML = '<i class="bi bi-geo-alt-fill me-2"></i>Lokasi Rutan Wonosobo';
 
     // Buat Container Collapse

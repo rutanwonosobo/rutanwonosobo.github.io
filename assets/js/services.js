@@ -39,6 +39,7 @@ container.appendChild(accordionContainer);
 layananData.forEach((layanan, index) => {
     const accordionItem = document.createElement('div');
     accordionItem.className = 'accordion-item';
+    accordionItem.setAttribute('data-aos', 'fade-right');
 
     accordionItem.innerHTML = `
         <h2 class="accordion-header" id="heading${index}">
