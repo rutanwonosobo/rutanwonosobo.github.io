@@ -35,9 +35,9 @@ window.addEventListener('load', function () {
     });
 });
 AOS.init({
+    /*
     once: true, // Animasi hanya terjadi sekali
     mirror: false, // Animasi tidak diputar ulang saat di-scroll ke atas
-    /*
     offset: 120, // Jarak dalam piksel
     delay: 0, // Penundaan animasi
     duration: 400, // Durasi animasi
