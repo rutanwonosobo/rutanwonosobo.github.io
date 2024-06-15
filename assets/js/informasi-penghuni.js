@@ -1,7 +1,7 @@
 // Memanggil fungsi aturDataMarquee() saat dokumen selesai dimuat
 window.onload = function () {
     // Memeriksa apakah elemen dengan id marqueeData sudah tersedia
-    if(document.getElementById('marqueeData')) {
+    if (document.getElementById('marqueeData')) {
         // Menunda penampilan teks di dalam marquee dengan delay 2000 milidetik (2 detik)
         setTimeout(aturDataMarquee, 2000);
     } else {
@@ -26,7 +26,7 @@ function aturDataMarquee() {
     var newText = `Jumlah Total Warga Binaan Pemasyarakatan ${totalWBP} Orang dengan rincian ${jumlahTahanan} Orang Tahanan (${lakiLakiTahanan} Laki-Laki, ${perempuanTahanan} Perempuan) dan ${jumlahNarapidana} Orang Narapidana (${lakiLakiNarapidana} Laki-Laki, ${perempuanNarapidana} Perempuan).`;
 
     // Mengganti teks di dalam marquee dengan teks baru yang sudah diformat
-    if(marquee) {
+    if (marquee) {
         marquee.innerText = newText;
     } else {
         console.error("Elemen dengan id 'marqueeData' tidak ditemukan.");
