@@ -45,3 +45,18 @@ AOS.init({
     anchorPlacement: 'top-bottom', // Animasi dipicu saat elemen bagian atas mencapai viewport bawah
     */
 });
+
+// Mengatasi padding body saat modal dibuka
+$(document).on('show.bs.modal', function () {
+    var bodyPaddingRight = parseInt($('body').css('padding-right') || 0, 10);
+    var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth) {
+        $('body').css('padding-right', bodyPaddingRight + scrollbarWidth + 'px');
+    }
+});
+
+// Mengembalikan padding body saat modal ditutup
+$(document).on('hidden.bs.modal', function () {
+    $('body').css('padding-right', '');
+});
