@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const cardHeader = document.createElement('div');
   cardHeader.className = 'card-header text-center fw-bold text-bg-light';
+  cardHeader.setAttribute('data-aos', 'fade-up');
   cardHeader.innerHTML = '<i class="bi bi-people-fill me-2"></i>Total Visitors';
   card.appendChild(cardHeader);
 
@@ -164,6 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
     tdLabel.style.width = '50%';
     tdLabel.textContent = row.label;
     tr.appendChild(tdLabel);
+    tdLabel.setAttribute('data-aos', 'fade-right');
+    tdLabel.setAttribute('data-aos-delay', '300');
 
     const tdValue = document.createElement('td');
     tdValue.className = 'text-start py-0';
@@ -174,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tdValue.appendChild(span);
     tdValue.appendChild(document.createTextNode(' Orang'));
     tr.appendChild(tdValue);
+    tdValue.setAttribute('data-aos', 'fade-left');
+    tdValue.setAttribute('data-aos-delay', '600');
   });
-
-  card.setAttribute('data-aos', 'fade-up');
 });
