@@ -33,6 +33,8 @@ function setContactUsSection() {
     const title = document.createElement('h4');
     title.className = 'fs-5 fw-bold text-uppercase my-4';
     title.textContent = 'Hubungi Kami';
+    title.setAttribute('data-aos', 'fade-down');
+    title.setAttribute('data-aos-delay', '300');
     container.appendChild(title);
 
     const contactRow = document.createElement('div');
