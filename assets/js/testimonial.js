@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
-    carouselInner.setAttribute('data-aos', 'fade-up');
 
     const indicators = document.createElement('div');
     indicators.classList.add('carousel-indicators', 'mt-4');
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     carousel.id = 'testimonialCarousel';
     carousel.classList.add('carousel', 'slide');
     carousel.setAttribute('data-bs-ride', 'carousel');
+    carousel.setAttribute('data-aos', 'fade-up');
+    carousel.setAttribute('data-aos-delay', '600');
     carousel.appendChild(carouselInner);
     carousel.appendChild(indicators);
 
@@ -87,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const heading = document.createElement('h4');
     heading.className = 'fs-5 text-center fw-bold text-uppercase mt-4';
     heading.innerText = 'Testimoni';
+    heading.setAttribute('data-aos', 'fade-in');
+    heading.setAttribute('data-aos-delay', '300');
     container.parentNode.insertBefore(heading, container);
 
     container.replaceWith(carousel);
