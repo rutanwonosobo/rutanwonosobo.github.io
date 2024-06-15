@@ -188,7 +188,7 @@ var pengumumanModal = `
                     <img id="pengumumanImage" class="img-fluid rounded shadow-sm" alt="Gambar Pengumuman">
                 </div>
                 <p id="pengumumanText"></p>
-                <div id="pengumumanHtml" class="text-center"></div>
+                <div id="pengumumanHtml" class="card-text text-center mt-4 mb-2"></div>
             </div>
         </div>
     </div>
