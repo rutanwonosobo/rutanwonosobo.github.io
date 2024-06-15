@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     var today = new Date();
-    var startDate = new Date("2024-06-01"); // Ganti dengan tanggal mulai pengumuman
+    var startDate = new Date("2024-06-15"); // Ganti dengan tanggal mulai pengumuman
     var endDate = new Date("2024-06-30"); // Ganti dengan tanggal akhir pengumuman
-    var showModal = false; // Ganti dengan true atau false untuk mengontrol tampilan modal
+    var showModal = true; // Ganti dengan true atau false untuk mengontrol tampilan modal
 
     if (showModal) {
         if (today >= startDate && today <= endDate) {
@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Isi gambar
                 var pengumumanImage = document.getElementById('pengumumanImage');
-                pengumumanImage.src = 'https://placehold.co/1200x628/005C78/F3F7EC?text=Humas+Rutan+Wonosobo';
+                pengumumanImage.src = 'https://cdn.jsdelivr.net/gh/rutanwonosobo/rutanwonosobo.github.io@main/assets/img/casn-kemenkumham-2024.webp';
                 pengumumanImage.style.display = 'block';
 
                 // Isi teks
-                document.getElementById('pengumumanText').innerText = 'Ini adalah pesan pengumuman penting.';
+                document.getElementById('pengumumanText').innerText = '';
 
                 // Isi HTML
-                document.getElementById('pengumumanHtml').innerHTML = 'Untuk informasi lebih lanjut, kunjungi <a href="https://www.example.com" target="_blank">link ini</a>.';
+                document.getElementById('pengumumanHtml').innerHTML = 'Untuk informasi lebih lanjut, kunjungi <a href="https://www.instagram.com/p/C8EZy4IPDU3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">link ini</a>.';
 
                 pengumumanModal.show();
-            }, 3000); // 3000 milidetik = 3 detik
+            }, 5000);
         }
     }
 });
