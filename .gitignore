@@ -1,0 +1,82 @@
+# Direktori sistem
+.DS_Store
+Thumbs.db
+
+# File log
+*.log
+logs/
+*.log.*
+
+# Direktori build dan keluaran
+build/
+dist/
+out/
+target/
+*.egg-info/
+*.egg
+
+# Direktori lingkungan virtual
+venv/
+env/
+ENV/
+venv.bak/
+*.env
+
+# File konfigurasi editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# File Python yang dikompilasi
+__pycache__/
+*.py[cod]
+*$py.class
+
+# File sementara
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# File database
+*.sqlite3
+
+# File konfigurasi pribadi
+*.env
+*.local
+
+# File dependency
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Direktori Jupyter Notebook
+.ipynb_checkpoints
+
+# File oleh sistem operasi
+*.bak
+*.orig
+*.rej
+*.old
+*.save
+
+# File oleh alat lain
+.coverage
+*.cover
+*.coverage.*
+*.py,cover
+
+# File hasil test
+junit-reports/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Direktori dari framework tertentu
+.mypy_cache/
+.pytest_cache/
+.tox/
+.sass-cache/
+.ruby-version
